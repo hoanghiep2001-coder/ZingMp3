@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="gray" style="--layout-bg: #e7dfdd; --purple-primary: #409abc; --text-item-hover: #409abc;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhạc cá nhân | Xem bài hát, album</title>
+    <link rel="icon" href="../Content/image/Icon/icon_zing_mp3_60.png">
+    <link rel="stylesheet" href="../Content/plugin/slick-master/slick/slick.css">
+    <link rel="stylesheet" href="../Content/plugin/slick-master/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../Content/css/main.css">
+    <link rel="stylesheet" href="../Content/plugin/bootstrap-4.6.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../Content/css/common.css">
+    <link rel="stylesheet" href="../Content/css/home.css">
+    <link rel="stylesheet" href="../Content/css/responsive.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container-default row no-gutters">
+
+            <!-- left side bar -->
+            <div id="container__left" class="container__left col-lg-2 col-12 position-relative">
+                <div class="">
+                    <section class="padr28 padl28 hide-on-mobile">
+                        <div class="logo">
+                            <img src="../Content/image/Background/logo-dark.svg" alt="logoMp3" class="logo__img">
+                        </div>
+                    </section>
+    
+                    <section>
+                        <ul class="ul-list mb8">
+                            <li class="list-item tab-personal tap-sideBar d-flex align-items-center active padt8 padb8 padr28 padl28"
+                                aria-current="true">
+                                <i class="bi bi-music-note-beamed fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Cá Nhân</h3>
+                            </li>
+                            <li
+                                class="list-item tab-explore tap-sideBar d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-vinyl fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Khám Phá</h3>
+                            </li>
+                            <li
+                                class="list-item tab-ranking tap-sideBar d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-graph-up-arrow fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">#zingchart</h3>
+                            </li>
+                            <li class="list-item tap-radio tap-sideBar d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-broadcast-pin fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8 mr8">Radio</h3>
+                                <img src="../Content/image/Icon/live.svg" alt="" class="live-icon hide-on-mobile">
+                            </li>
+                            <li
+                                class="list-item tap-follow tap-sideBar d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-bell fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Theo dõi</h3>
+                            </li>
+                        </ul>
+                    </section>
+    
+                    <section id="nav-sidebar-2" class="container__left-border hide-on-mobile">
+                        <ul class="ul-list mb8 mt8">
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28" aria-current="true">
+                                <i class="bi bi-music-note-list fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Nhạc Mới</h3>
+                            </li>
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-menu-app fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Thể Loại</h3>
+                            </li>
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-star fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Top 100</h3>
+                            </li>
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-camera-video fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8 mr8">MV</h3>
+                            </li>
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <div class="up-vip bora-12 pad12 text-center">
+                                    <h3 class="fz-12 fw-600 medium">Nghe nhạc không quảng cáo cùng kho nhạc VIP</h3>
+                                    <button class="btn btn-warning fz-12 fw-600 medium mt8">NÂNG CẤP VIP</button>
+                                </div>
+                            </li>
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <h3 class="fz-13 fw-600 medium">Thư Viện</h3>
+                            </li>
+    
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-file-earmark-music-fill fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8 mr8">Bài Hát</h3>
+                            </li>
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-music-note-list fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8 mr8">PlayList</h3>
+                            </li>
+                            <li id="sidebar-item-offsetTop"
+                                class="list-item d-flex align-items-center padt8 padb8 padr28 padl28">
+                                <i class="bi bi-clock-history fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8 mr8">Gần Đây</h3>
+                            </li>
+                        </ul>
+                    </section>
+    
+                    <section id="create-playlist" class="position-absolute hide-on-mobile">
+                        <ul class="ul-list mb8 mt8">
+                            <li class="list-item d-flex align-items-center padt8 padb8 padr28 padl28" aria-current="true">
+                                <i class="bi bi-plus-lg fz-24 lh-24"></i>
+                                <h3 class="fz-13 ml8">Tạo Playlist Mới</h3>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <!-- // end left side bar -->
+
+            <!-- main content -->
+            <div class="container__right col-lg-10">
+
+                <div id="container__right-header" class="container__right-header padr60 padl60 pad-sm-l12 pad-sm-r12 position-fixed">
+                    <section id="header__with-search" class="d-flex justify-content-between ">
+                        <div class="header__search d-flex">
+                            <i id="header__icon-prev" class="bi bi-arrow-left fz-24 header__search-icon mr20"></i>
+                            <i id="header__icon-next" class="bi bi-arrow-right fz-24 header__search-icon mr20"></i>
+                            <form id="form-search">
+                                <div class="header__search-area d-flex align-items-center position-relative">
+                                    <i id="search-icon"
+                                        class="bi bi-search position-absolute fz-20 ml12 cursor-pointer"></i>
+                                    <input id="search-keyword" name="" class="padl40 padr32 fz-14" value="" type="text"
+                                        placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát...">
+                                </div>
+                            </form>
+                        </div>
+                        <ul class="header__list d-flex">
+                            <li id="layout__container" class="header__list-item header__list-overlay padl16 padr16">
+                                <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                    <defs>
+                                        <linearGradient id="j32lhg93hd" x1="62.206%" x2="18.689%" y1="70.45%"
+                                            y2="39.245%">
+                                            <stop offset="0%" stop-color="#F81212"></stop>
+                                            <stop offset="100%" stop-color="red"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="hjoavsus6g" x1="50%" x2="11.419%" y1="23.598%" y2="71.417%">
+                                            <stop offset="0%" stop-color="#00F"></stop>
+                                            <stop offset="100%" stop-color="#0031FF"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="la1y5u3dvi" x1="65.655%" x2="25.873%" y1="18.825%"
+                                            y2="56.944%">
+                                            <stop offset="0%" stop-color="#FFA600"></stop>
+                                            <stop offset="100%" stop-color="orange"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="2dsmrlvdik" x1="24.964%" x2="63.407%" y1="8.849%"
+                                            y2="55.625%">
+                                            <stop offset="0%" stop-color="#13EFEC"></stop>
+                                            <stop offset="100%" stop-color="#00E8DF"></stop>
+                                        </linearGradient>
+                                        <filter id="4a7imk8mze" width="230%" height="230%" x="-65%" y="-65%"
+                                            filterUnits="objectBoundingBox">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                        </filter>
+                                        <filter id="301mo6jeah" width="312.7%" height="312.7%" x="-106.4%" y="-106.4%"
+                                            filterUnits="objectBoundingBox">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                        </filter>
+                                        <filter id="b2zvzgq7fj" width="295%" height="295%" x="-97.5%" y="-97.5%"
+                                            filterUnits="objectBoundingBox">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                        </filter>
+                                        <filter id="a1wq161tvl" width="256%" height="256%" x="-78%" y="-78%"
+                                            filterUnits="objectBoundingBox">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+                                        </filter>
+                                        <path id="qtpqrj1oda"
+                                            d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z">
+                                        </path>
+                                        <path id="jggzvnjgfc" d="M0 0H20V20H0z"></path>
+                                        <path id="2eiwxjmc7m"
+                                            d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z">
+                                        </path>
+                                    </defs>
+                                    <g fill="none" fill-rule="evenodd" transform="translate(2 3)">
+                                        <mask id="tinejqaasb" fill="#fff">
+                                            <use xlink:href="#qtpqrj1oda"></use>
+                                        </mask>
+                                        <use fill="#FFF" fill-opacity="0" xlink:href="#qtpqrj1oda"></use>
+                                        <g mask="url(#tinejqaasb)">
+                                            <g transform="translate(-2 -3)">
+                                                <mask id="uf3ckvfvpf" fill="#fff">
+                                                    <use xlink:href="#jggzvnjgfc"></use>
+                                                </mask>
+                                                <use fill="#D8D8D8" xlink:href="#jggzvnjgfc"></use>
+                                                <circle cx="8.9" cy="6.8" r="9" fill="url(#j32lhg93hd)"
+                                                    filter="url(#4a7imk8mze)" mask="url(#uf3ckvfvpf)"></circle>
+                                                <circle cx="9.3" cy="13.7" r="5.5" fill="url(#hjoavsus6g)"
+                                                    filter="url(#301mo6jeah)" mask="url(#uf3ckvfvpf)"></circle>
+                                                <circle cx="15.9" cy="6.9" r="6" fill="url(#la1y5u3dvi)"
+                                                    filter="url(#b2zvzgq7fj)" mask="url(#uf3ckvfvpf)"></circle>
+                                                <circle cx="16.4" cy="17.7" r="7.5" fill="url(#2dsmrlvdik)"
+                                                    filter="url(#a1wq161tvl)" mask="url(#uf3ckvfvpf)">
+
+                                                </circle>
+                                            </g>
+                                        </g>
+                                        <use fill="#FFF" fill-opacity="0.05" xlink:href="#2eiwxjmc7m"></use>
+                                    </g>
+                                </svg>
+                            </li>
+                            <li class="header__list-item header__list-overlay padl16 padr16">
+                                <i class="bi bi-bank fz-20"></i>
+                            </li>
+                            <li class="header__list-item header__list-overlay padl16 padr16">
+                                <i class="bi bi-download fz-20"></i>
+                            </li>
+                            <li class="header__list-item header__list-overlay padl16 padr16">
+                                <i class="bi bi-gear fz-20"></i>
+                            </li>
+                            <li class="header__list-item">
+                                <img width="40" height="40" src="../Content/image/Avartar/Avatar.jpg" alt=""
+                                    class="header__avatar">
+                            </li>
+                        </ul>
+
+                    </section>
+                </div>
+
+                <div id="container__right">
+                    <!-- personal -->
+                    <div class="container__right-content container__right-personal active padr60 padl60 pad-sm-l12 pad-sm-r12">
+                        <div class="container__right-body">
+
+                            <!-- library -->
+                            <div id="library" class="library padt60">
+                                <div class="library__heading d-flex align-items-center">
+                                    <h3 class="library__heading-title fz-40 fw-600 medium">Thư viện</h3>
+                                    <i
+                                        class="bi bi-play-circle-fill library__heading-runPlaylist fz-40 ml16 cursor-pointer position-relative"></i>
+                                </div>
+
+                                <div id="artist" class="artist">
+                                    <!-- artist render -->
+                                    <div id="render-artist" class="row">
+                                    </div>
+                                    <!-- // end artist render -->
+                                </div>
+
+                                <!-- playlist render -->
+                                <div id="playlist" class="mt32">
+                                    <div class="playlist__title mb16">
+                                        <div class="d-flex align-items-center">
+                                            <h3 class="playlist__title fz-20 fw-600">
+                                                PLAYLIST
+                                            </h3>
+                                            <i
+                                                class="bi bi-plus-circle-fill playlist__add fz-18 ml8 cursor-pointer"></i>
+                                        </div>
+                                    </div>
+                                    <div id="render-playlist" class="position-relative">
+
+                                    </div>
+                                </div>
+                                <!-- // end playlist render -->
+                            </div>
+                            <!-- // end library -->
+
+                            <!-- Nav -->
+                            <ul class="nav nav-tabs mt32" id="myTab" role="tablist">
+                                <li class="nav-item active" role="presentation">
+                                    <button class="nav-link nav-link-border-bottom active fz-14" id="music-tab"
+                                        data-toggle="tab" data-target="#music" type="button" role="tab"
+                                        aria-controls="music" aria-selected="true">BÀI HÁT</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link nav-link-border-bottom fz-14" id="podcast-tab"
+                                        data-toggle="tab" data-target="#podcast" type="button" role="tab"
+                                        aria-controls="podcast" aria-selected="false">PODCAST</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link nav-link-border-bottom fz-14" id="album-tab"
+                                        data-toggle="tab" data-target="#album" type="button" role="tab"
+                                        aria-controls="album" aria-selected="false">ALBUM</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link nav-link-border-bottom fz-14" id="mv-tab" data-toggle="tab"
+                                        data-target="#mv" type="button" role="tab" aria-controls="mv"
+                                        aria-selected="false">MV</button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content mb20" id="myTabContent">
+                                <div class="tab-pane fade show active" id="music" role="tabpanel"
+                                    aria-labelledby="music-tab">
+
+                                    <div class="row no-gutters list-desc padt12 padb12 mt20">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-1">
+
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <h3 class="fz-12 fw-600">BÀI HÁT</h3>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-9">
+                                                    <h3 class="fz-12 fw-600">ALBUM</h3>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <h3 class="fz-12 text-center fw-600">THỜI GIAN</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- render Playlist -->
+                                    <div id="my-playlist">
+
+                                    </div>
+                                    <!-- // end My Playlist -->
+                                </div>
+                                <div class="tab-pane fade" id="podcast" role="tabpanel" aria-labelledby="podcast-tab">
+                                    ...</div>
+                                <div class="tab-pane fade" id="album" role="tabpanel" aria-labelledby="album-tab">...
+                                </div>
+                                <div class="tab-pane fade" id="mv" role="tabpanel" aria-labelledby="mv-tab">...</div>
+                            </div>
+                            <!-- // end Nav -->
+                        </div>
+                    </div>
+                    <!-- // end personal -->
+
+                    <!-- playlist track -->
+                    <div class="container__right-content container__right-track padr60 padl60 pad-sm-r12 pad-sm-l12">
+
+                        <div class="row mt72 padt20 ">
+                            <div class="col-lg-4">
+                                <div class="track__cd position-relative">
+                                    <img id="track-cdThumb" src="../Content/image/Avartar/Avatar.jpg" alt="">
+                                    <div class="playlist__div playlist__div-icon position-absolute ">
+                                        <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                                            <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                                            <div class="playlist__div-rounded text-center">
+                                                <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                                                <i id="track__cd-playBtn" class="bi bi-play-fill fz-36"></i>
+                                            </div>
+                                            <i class="bi bi-three-dots fz-20"></i>                                                   
+                                        </div>
+                                    </div>
+                                    <div class="track__cd-playing position-absolute">
+                                        <img id="track__cd-pauseBtn" src="../Content/image/Icon/icon-playing.gif" class="track__cd-isRounded position-absolute" alt="">
+                                    </div>
+                                </div>
+                                <div class="track__name d-flex flex-column">
+                                    <h3 class="fz-20">Nhạc Cá Nhân</h3>
+                                    <p class="track__update">Cập nhật: 07/08/2022</p>
+                                    <p class="track__like">1204K người yêu thích</p>
+                                </div>
+                                <div class="track__controls d-flex flex-column mt20">
+                                    <button id="track__controls-play" class="d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-play-fill track__controls-play"></i>
+                                        <i class="bi bi-pause-fill track__controls-pause d-none"></i>
+                                        <h3>Tạm Dừng</h3>
+                                    </button>
+                                    <div class="track__controls-actions d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-heart fz-16 cursor-pointer position-relative"></i>
+                                        <i class="bi bi-three-dots fz-16 ml8 cursor-pointer position-relative"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="track__playlist" class="col-lg-8">
+                                <div class="tab-content mb20" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="" role=""
+                                        aria-labelledby="music-tab">
+
+                                        <div class="row no-gutters list-desc padt12 padb12 mt20">
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-1">
+
+                                                    </div>
+                                                    <div class="col-lg-11">
+                                                        <h3 class="fz-12 fw-600">BÀI HÁT</h3>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <h3 class="fz-12 fw-600">ALBUM</h3>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <h3 class="fz-12 text-center fw-600">THỜI GIAN</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- render track playlist -->
+                                        <div id="render-track">
+
+                                        </div>
+                                        <!-- // end render track playlist -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- maybe you care playlist -->
+                        <div id="carePlaylist" class="position-relative">
+                            
+                        </div>
+                        <!-- // maybe you care playlist -->
+                    </div>
+                    <!-- // end playlist track -->
+                </div>
+
+            </div>
+            <!-- // end main content -->
+
+            <!-- music player -->
+            <div class="container__player position-fixed">
+                <div class="row no-gutters padl20 padr20 padt12 padb12 pad-sm-r12 pad-sm-l12 pad-sm-t4 pad-sm-b4">
+                    <div class="player__desc col-lg-3 col-sm-8 d-flex justify-content-sm-start justify-content-between align-items-center">
+                        <div class="player__desc-img cursor-pointer">
+                            <img id="player__img" src="" alt="">
+                        </div>
+                        <div class="player__desc-name m-sm-12">
+                            <h3 id="name" class="fz-14"></h3>
+                            <p id="author" class="fz-12"></p>
+                        </div>
+                        <div class="player__desc-icon d-sm-none">
+                            <i class="bi bi-heart fz-16 cursor-pointer"></i>
+                            <i class="bi bi-three-dots fz-16 ml8 cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-4">
+                        <div class="player__control">
+                            <div class="player__control-buttons d-flex align-items-center justify-content-center">
+                                <i id="random-song" class="bi bi-shuffle fz-20 pad4 ml8 mr8 cursor-pointer d-sm-none"></i>
+                                <i id="prev-song" class="bi bi-chevron-bar-left d-sm-none fz-20 pad4 ml8 mr8 cursor-pointer"></i>
+                                <div id="play-btn">
+                                    <i id="play-btn__play"
+                                        class="bi bi-play-circle fz-40 pad4 ml8 mr8 cursor-pointer"></i>
+                                    <i id="play-btn__pause"
+                                        class="bi bi-pause-circle fz-40 pad4 ml8 mr8 cursor-pointer d-none"></i>
+                                </div>
+                                <i id="next-song" class="bi bi-chevron-bar-right fz-20 pad4 ml8 mr8 cursor-pointer"></i>
+                                <i id="repeat-song"
+                                    class="bi bi-arrow-counterclockwise fz-20 pad4 ml8 mr8 cursor-pointer d-sm-none"></i>
+                            </div>
+                            <div class="player__control-progress d-sm-none d-flex align-items-center justify-content-center">
+                                <div class="time-start mr12">
+                                    <p class="fz-12"></p>
+                                </div>
+                                <div id="progress" class="lh-24">
+                                    <input type="range" id="range" value="0" max="100" min="0" step="1">
+                                    <audio id="audio" src=""></audio>
+                                </div>
+                                <div class="time-end ml12">
+                                    <p class="fz-12"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-sm-none">
+                        <div class="d-flex align-items-center player__service justify-content-between">
+                            <i class="bi bi-camera-video-off-fill cursor-pointer fz-16"></i>
+                            <i class="bi bi-mic-mute-fill cursor-pointer fz-16"></i>
+                            <i class="bi bi-fullscreen cursor-pointer fz-20"></i>
+                            <div class="d-flex align-items-center">
+                                <i id="volume-on" class="bi volume-btn bi-volume-up cursor-pointer fz-20"></i>
+                                <i id="volume-mute"
+                                    class="bi volume-btn bi-volume-mute cursor-pointer fz-20 d-none"></i>
+                                <input id="volumn" type="range" value="100" max="100" min="0" step="1"
+                                    class=" ml8 cursor-pointer">
+                            </div>
+                            <button id="playlist-running">
+                                <i class="bi bi-music-note-list cursor-pointer fz-20"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // end music player -->
+
+            <!-- layout container modal -->
+            <div class="modal modal-layout__container">
+                <div class="modal__overlay">
+
+                </div>
+                <div class="modal__body">
+                    <div class="layout pad28">
+                        <div class="layout__title d-flex justify-content-between align-items-center">
+                            <h3 class="fw-600 fz-24">Giao Diện
+                            </h3>
+
+                            <i id="layout__exit" class="bi bi-x-lg"></i>
+                        </div>
+                        <div class="layout__content mt20">
+                            <!-- dynamic -->
+                            <h3 class="fz-18 fw-600 mb12">Dynamic</h3>
+                            <div class="layout__content-dynamic row mb16">
+
+                            </div>
+                            <!-- // end dynamic -->
+                            <!-- topic -->
+                            <h3 class="fz-18 fw-600 mb12">Chủ Đề</h3>
+                            <div class="layout__content-topic row mb12">
+
+                            </div>
+                            <!-- // end topic -->
+                            <!-- artist -->
+                            <h3 class="fz-18 fw-600 mb12">Nghệ Sĩ</h3>
+                            <div class="layout__content-artist row mb12">
+
+                            </div>
+                            <!-- // end artist -->
+                            <!-- dark color -->
+                            <h3 class="fz-18 fw-600 mb12">Màu Tối</h3>
+                            <div class="layout__content-dark row mb12">
+
+                            </div>
+                            <!-- // end dark color -->
+                            <!-- dark color -->
+                            <h3 class="fz-18 fw-600 mb12">Màu Sáng</h3>
+                            <div class="layout__content-bright row mb12">
+
+                            </div>
+                            <!-- // end dark color -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // end layout container modal -->
+        </div>
+    </div>
+    <script>
+        String.prototype.toMMSS = function () {
+            var sec_num = parseInt(this, 10);
+            var minutes = Math.floor(sec_num / 60);
+            var seconds = sec_num - (minutes * 60);
+
+            if (minutes < 10) { minutes = "0" + minutes; }
+            if (seconds < 10) { seconds = "0" + seconds; }
+            return minutes + ':' + seconds;
+        }
+    </script>
+    <script src="../Content/plugin/jquery/jquery.js"></script>
+    <script src="../Content/plugin/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+    <script src="../Content/plugin/slick-master/slick/slick.js"></script>
+    <script src="../Content/js/common/common.js"></script>
+    <script src="../Content/js/common-pages/home.js"></script>
+</body>
+
+</html>

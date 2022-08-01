@@ -1,0 +1,138 @@
+/* reset */
+@font-face {
+    font-family: "Inter-Light";
+    src: url("../font/Inter/static/Inter-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("../font/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../font/Inter/static/Inter-Medium.ttf") format("truetype");
+}
+
+@keyframes cdThumbAnimate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter-Regular";
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--link-text-hover);
+}
+
+ol,li {
+    list-style: none;
+}
+
+ol,ul,dl {
+    margin-bottom: 0;
+}
+
+label,
+h1,h2,h3,h4,h5,h6,
+p {
+    margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    animation: fadeIn linear 0.3s;
+    display: none;
+    z-index: 10000;
+  }
+  
+  .modal.open {
+    display: flex;
+  }
+  
+  .modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal__body {
+    width: 896px;
+    margin: auto;
+    position: relative;
+    z-index: 10000;
+    border-radius: 8px;
+  }
+
+  input {
+    font-size: initial;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  .bora-2 {
+    border-radius: 2px;
+  }
+  
+  .bora-4 {
+    border-radius: 4px;
+  }
+  
+  .bora-5 {
+    border-radius: 5px;
+  }
+  
+  .bora-6 {
+    border-radius: 6px;
+  }
+  
+  .bora-8 {
+    border-radius: 8px;
+  }
+  
+  .bora-10 {
+    border-radius: 10px;
+  }
+  
+  .bora-12 {
+    border-radius: 12px;
+  }
+  
+  .bora-14 {
+    border-radius: 14px;
+  }
+  
+ 
