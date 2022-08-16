@@ -296,6 +296,8 @@ body {
   height: 56px;
 }
 
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-title,
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-author,
 .container-default #carePlaylist .playlist__div-author,
 .container-default #carePlaylist .playlist__div-name,
 .container-default .container__right-body #library #playlist .playlist__div-author,
@@ -350,6 +352,73 @@ body {
 
 .container-default .container__right-body .nav-tabs .nav-item.active {
   border-bottom: 2px solid var(--purple-primary);
+}
+
+
+.container-default .container__right-body #podcast-nav-tap {
+  border-bottom: unset;
+}
+
+.container-default .container__right-body #podcast-nav-tap .podcast__link {
+  border: 1px solid var(--text-primary);
+  font-size: 12px;
+  border-radius: 24px;
+  margin-right: 12px;
+}
+
+.container-default .container__right-body #podcast-nav-tap .podcast__link.active {
+  background-color: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: var(--white);
+}
+
+.container-default .container__right-body #mv #render__personal-MV {
+
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item {
+
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image {
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image img {
+  width: 100%;
+  height: auto;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay {
+
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc {
+  margin-top: 8px;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-avartar {
+  margin-right: 10px;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-avartar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content {
+
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-title {
+  font-size: 14px;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-author {
+  color: var(--text-secondary);
+  font-size: 12px;
 }
 
 .container-default .container__right-body #myTabContent #my-playlist .song .song__icon-note,

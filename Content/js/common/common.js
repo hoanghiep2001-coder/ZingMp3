@@ -782,6 +782,56 @@ var Home = (function () {
         dataPlaylist: 9
       }
     ],
+    PersonalMV: [
+      {
+        MvSource: "https://www.youtube.com/watch?v=kt_cs4b-8Zc",
+        MvImage: "../Content/image/MV/camgiaclucayserasao.webp",
+        MvName: "Cảm Giác Lúc Ấy Sẽ Ra Sao",
+        MvAuthor: "LOU Hoàng",
+        MvDuration: "13:06",
+        AuthorAvatar: "../Content/image/Artist/MV/louhoang.jpg",
+      },
+      {
+        MvSource: "https://www.youtube.com/watch?v=GwCUbhE0TY0",
+        MvImage: "../Content/image/MV/motbuocyeuvandamdau.webp",
+        MvName: "Một Bước Yêu Vạn Dặm Đau",
+        MvAuthor: "Mr.Siro",
+        MvDuration: "11:54",
+        AuthorAvatar: "../Content/image/Artist/MV/mrsiro.jpg",
+      },
+      {
+        MvSource: "https://www.youtube.com/watch?v=1ZRb1we80kM",
+        MvImage: "../Content/image/MV/goodboy.webp",
+        MvName: "GOODBOY",
+        MvAuthor: "GD X TAEYANG",
+        MvDuration: "04:13",
+        AuthorAvatar: "../Content/image/Artist/MV/gdxtaeyang.jpg",
+      },
+      {
+        MvSource: "https://www.youtube.com/watch?v=Amq-qlqbjYA",
+        MvImage: "../Content/image/MV/asifitsyourlast.webp",
+        MvName: "AS IF IT'S YOUR LAST",
+        MvAuthor: "BLACKPINK",
+        MvDuration: "03:36",
+        AuthorAvatar: "../Content/image/Artist/MV/blackpink.jpg",
+      },
+      {
+        MvSource: "https://www.youtube.com/watch?v=2ips2mM7Zqw",
+        MvImage: "../Content/image/MV/bangbangbang.webp",
+        MvName: "BANG BANG BANG",
+        MvAuthor: "BIGBANG",
+        MvDuration: "03:50",
+        AuthorAvatar: "../Content/image/Artist/MV/bigbang.jpg",
+      },
+      {
+        MvSource: "https://www.youtube.com/watch?v=ioNng23DkIM",
+        MvImage: "../Content/image/MV/howyoulikethat.webp",
+        MvName: "How You Like That",
+        MvAuthor: "BLACKPINK",
+        MvDuration: "03:03",
+        AuthorAvatar: "../Content/image/Artist/MV/blackpink.jpg",
+      },
+    ],
     MaybeYouCareAboutList: [
       {
         image: "../Content/image/Playlist/MaybeYouCare/care2.webp",

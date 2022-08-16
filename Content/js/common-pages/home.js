@@ -28,6 +28,9 @@ $(document).ready(function () {
   
       // render personaL Playlist
       this.renderPersonalPlaylist();
+
+      // render personal MV
+      this.renderPersonalMV();
   
       // render maybe you care playlist
       this.renderMaybeYouCarePlaylist();
@@ -575,6 +578,9 @@ $(document).ready(function () {
   
       $("#render-playlist").html(playlists.join(""));
     },
+    renderPersonalMV: function() {
+      
+    },
     renderPlaylistToTrack: function (playlist) {
       let songs = Home.PlaylistSong[playlist].map((song, index) => {
         return `
@@ -922,7 +928,6 @@ $(document).ready(function () {
       $(".playlist__card")
         .unbind()
         .click(function (e) {
-          debugger
           let $this = $(this);
           let $dataPlaylist = $this.data("playlist");
           let $img = $this.find(".playlist__div-img");
