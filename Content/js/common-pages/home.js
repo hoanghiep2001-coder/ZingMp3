@@ -71,7 +71,7 @@ $(document).ready(function () {
     UsingSlickSliderPlugin: function () {
       $("#render-artist").slick({
         slidesToShow: 5,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         variableWidth: false,
         slidesToScroll: 1,
@@ -99,7 +99,7 @@ $(document).ready(function () {
 
       $("#render-playlist").slick({
         slidesToShow: 4,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         variableWidth: false,
         responsive: [
