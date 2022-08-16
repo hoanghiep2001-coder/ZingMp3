@@ -39,9 +39,7 @@ body {
 }
 
 .container-default .container__left section#nav-sidebar-2 {
-  max-height: 200px;
   overflow: hidden auto;
-  
 }
 
 .container-default .container__left section#nav-sidebar-2::-webkit-scrollbar {
@@ -108,8 +106,17 @@ body {
   margin-top: 30px;
 }
 
+.container-default .container__right-body #library #artist .slick-list {
+  overflow: unset;
+  overflow-x: clip;
+}
+
 .container-default .container__right-body #library #artist .artist__name  {
   color: var(--text-primary);
+}
+
+.container-default .container__right-body #library #artist .slick-slide {
+  margin: 0 12px ;
 }
 
 .container-default .container__right-body #library #artist .artist__avatar {
@@ -144,7 +151,7 @@ body {
   border-radius: 8px;
   bottom: 30px;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   display: none;
   box-shadow: 3px 4px 5px var(--sticky-header-box-shadow);
 }
@@ -221,8 +228,7 @@ body {
 
 .container-default #carePlaylist .slick-slide,
 .container-default .container__right-body #library #playlist .slick-slide {
-  width: 220px !important; 
-  margin-left: 20px;
+  margin: 0 12px;
 }
 
 .container-default #carePlaylist .playlist__div,
@@ -309,6 +315,7 @@ body {
 }
 
 .container-default #carePlaylist .slick-prev.slick-arrow, 
+.container-default .container__right-body #library #artist .slick-prev.slick-arrow,
 .container-default .container__right-body #library #playlist .slick-prev.slick-arrow {
   top: calc(50% - 20px);
   left: 0px;
@@ -317,6 +324,7 @@ body {
 }
 
 .container-default #carePlaylist .slick-next.slick-arrow,
+.container-default .container__right-body #library #artist .slick-next.slick-arrow,
 .container-default .container__right-body #library #playlist .slick-next.slick-arrow {
   top: calc(50% - 20px);
   right: 10px;
@@ -326,6 +334,8 @@ body {
 
 .container-default #carePlaylist .slick-next.slick-arrow::before,
 .container-default #carePlaylist .slick-prev.slick-arrow::before,
+.container-default .container__right-body #library #artist .slick-next.slick-arrow::before,
+.container-default .container__right-body #library #artist .slick-prev.slick-arrow::before,
 .container-default .container__right-body #library #playlist .slick-next.slick-arrow::before,
 .container-default .container__right-body #library #playlist .slick-prev.slick-arrow::before {
   font-size: 30px;
@@ -450,7 +460,6 @@ body {
 }
 
 .container__left section#nav-sidebar-2 {
-  max-height: 200px;
   overflow: hidden auto;
 }
 
@@ -747,6 +756,14 @@ body {
   max-height: 300px;
 }
 
+.container__right .container__right-track #carePlaylist {
+  
+}
+
+.container__right .container__right-track #carePlaylist .playlist__card { 
+
+}
+
 /* ------------- // end Track render playlist -------------*/
 
 /* ------------ Layout modal -------------- */
@@ -829,7 +846,6 @@ body {
 }
 
 .container__left section#nav-sidebar-2 {
-  max-height: 200px;
   overflow: hidden auto;
 }
 
@@ -969,6 +985,11 @@ body {
   padding-top: 80px;
 }
 
+.container-default .container__right-body #library #artist .slick-list .slick-slide.slick-current.slick-active .artist__desc { 
+  right: unset;
+  left: 0;
+}
+
 .container__right-body #library #artist .artist__desc-div {
   border-radius: 8px;
   overflow: hidden;
@@ -1004,8 +1025,7 @@ body {
 
 #container__right .container__right-track .song .song__icon,
 .container__right-body #myTabContent #my-playlist .song .song__icon {
-  width: 40px;
-  height: 40px;
+  width: 100%;
   top: 0;
   left: 0;
 }

@@ -3,7 +3,9 @@ var Home = (function () {
     init: function () {
       this.onSomething();
     },
-    onSomething: function () {},
+    onSomething: function () {
+
+    },
     PlaylistSong: {
       1: [
         {
@@ -493,7 +495,7 @@ var Home = (function () {
     },
     PersonalArtists: [
       {
-        image: "../Content/image/Artist/Personal/binz.jpg",
+        image: "../Content/image/Artist/Personal/binz.webp",
         name: "Binz",
         like: "377K Quan Tâm",
         desc: "Là rapper người Mỹ gốc Việt có chất giọng tốt, kỹ thuật tốt cùng khả năng sáng tác điêu luyện,...",
@@ -782,19 +784,7 @@ var Home = (function () {
     ],
     MaybeYouCareAboutList: [
       {
-        image: "../Content/image/Playlist/MaybeYouCare/care1.webp",
-        name: "Đỉnh Cao Zing MP3 ",
-        author: "Jack 5 Triệu, Kay - ATM, JayKii, Bích Phương,",
-        dataPlaylist: ""
-      },
-      {
         image: "../Content/image/Playlist/MaybeYouCare/care2.webp",
-        name: "Đỉnh Cao Zing MP3 ",
-        author: "Jack 5 Triệu, Kay - ATM, JayKii, Bích Phương,",
-        dataPlaylist: ""
-      },
-      {
-        image: "../Content/image/Playlist/MaybeYouCare/care3.webp",
         name: "Đỉnh Cao Zing MP3 ",
         author: "Jack 5 Triệu, Kay - ATM, JayKii, Bích Phương,",
         dataPlaylist: ""
@@ -817,19 +807,7 @@ var Home = (function () {
         author: "Jack 5 Triệu, Kay - ATM, JayKii, Bích Phương,",
         dataPlaylist: ""
       },
-      {
-        image: "../Content/image/Playlist/MaybeYouCare/care7.webp",
-        name: "Đỉnh Cao Zing MP3 ",
-        author: "Jack 5 Triệu, Kay - ATM, JayKii, Bích Phương,",
-        dataPlaylist: ""
-      },
-      {
-        image: "../Content/image/Playlist/MaybeYouCare/care8.webp",
-        name: "Đỉnh Cao Zing MP3 ",
-        author: "Jack 5 Triệu, Kay - ATM, JayKii, Bích Phương,",
-        dataPlaylist: ""
-      },
-    ]
+    ],
   };
 })();
 

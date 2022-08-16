@@ -799,6 +799,16 @@
 
 /* --------- mobile --------- */
 @media (max-width: 740px) {
+    /* ----------- font size ---------*/
+    .fz-sm-10 {
+        font-size: 10px !important;
+    }
+
+    /* ---------- line height ---------- */
+    .lh-sm-0 {
+        line-height: 0 !important;
+    }
+
     /*-------padding-------*/
 .pad-sm-4 {
     padding: 4px !important;
