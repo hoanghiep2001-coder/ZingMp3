@@ -135,4 +135,9 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 14px;
   }
   
+  .is-40px {
+    max-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
  

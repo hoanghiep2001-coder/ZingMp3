@@ -296,6 +296,7 @@ body {
   height: 56px;
 }
 
+.container-default .container__right-body #album #render__personal-Album .Album__item-desc .Album__item-content .Album__item-title,
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-title,
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-author,
 .container-default #carePlaylist .playlist__div-author,
@@ -372,26 +373,110 @@ body {
   color: var(--white);
 }
 
+.container-default .container__right-body #album #render__personal-Album .Album__item {
+  margin-top: 24px;
+} 
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-image {
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: .4s ease-out;
+  border-radius: 8px;
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-overlay {
+
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-play {
+
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-desc {
+
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-content {
+
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-title {
+  margin-top: 8px;
+}
+
+
 .container-default .container__right-body #mv #render__personal-MV {
 
 }
 
 .container-default .container__right-body #mv #render__personal-MV .MV__item {
-
+  margin-top: 24px;
 }
 
 .container-default .container__right-body #mv #render__personal-MV .MV__item-image {
   padding-bottom: 56.25%;
   height: 0;
+  overflow: hidden;
+  transition: .4s ease-out;
+  border-radius: 8px;
 }
 
+.container-default .container__right-body #album #render__personal-Album .Album__item-image img,
 .container-default .container__right-body #mv #render__personal-MV .MV__item-image img {
   width: 100%;
   height: auto;
+  transition: .4s ease-out;
 }
 
-.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay {
+.container-default .container__right-body #album #render__personal-Album .Album__item-image:hover img,
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image:hover img {
+  transform: scale(1.1);
+}
 
+.container-default .container__right-body #album #render__personal-Album .Album__item-image:hover .Album__item-overlay,
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image:hover .MV__item-overlay {
+  display: block;
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-overlay,
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-alpha-50);
+  display: none;
+  color: var(--white);
+}
+
+.container-default .container__right-body #album #render__personal-Album .Album__item-image .Album__item-overlay .Album__item-play,
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay .MV__item-play {
+  font-size: 45px;
+  top: calc(50% - 33.75px);
+  left: calc(50% - 22.5px);
+  cursor: pointer;
+  color: var(--white)
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay .MV__item-duration {
+  right: 8px;
+  bottom: 8px;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay .MV__item-duration #MV-duration {
+  color: var(--white);
+  font-size: 12px;
+  background-color: rgba(0,0,0,.7);
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+
+.container-default .container__right-body #mv #render__personal-MV .MV__item-image .MV__item-overlay .MV__item-remove {
+  font-size: 30px;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
 }
 
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc {
@@ -400,6 +485,7 @@ body {
 
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-avartar {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-avartar img {
@@ -409,9 +495,10 @@ body {
 }
 
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content {
-
+  cursor: pointer
 }
 
+.container-default .container__right-body #album #render__personal-Album .Album__item-desc .Album__item-content .Album__item-title,
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-title {
   font-size: 14px;
 }

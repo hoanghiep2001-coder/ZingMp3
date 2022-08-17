@@ -782,6 +782,12 @@ var Home = (function () {
         dataPlaylist: 9
       }
     ],
+    PersonalAlbum: [
+      {
+        albumName: "Để Mị Nói Cho Mà Nghe",
+        albumImage: "../Content/image/Album/Personal/deminoichomanghe.webp",
+      },
+    ],
     PersonalMV: [
       {
         MvSource: "https://www.youtube.com/watch?v=kt_cs4b-8Zc",
@@ -802,10 +808,10 @@ var Home = (function () {
       {
         MvSource: "https://www.youtube.com/watch?v=1ZRb1we80kM",
         MvImage: "../Content/image/MV/goodboy.webp",
-        MvName: "GOODBOY",
+        MvName: "GOOD BOY",
         MvAuthor: "GD X TAEYANG",
         MvDuration: "04:13",
-        AuthorAvatar: "../Content/image/Artist/MV/gdxtaeyang.jpg",
+        AuthorAvatar: "../Content/image/Artist/MV/gdxtaeyang.png",
       },
       {
         MvSource: "https://www.youtube.com/watch?v=Amq-qlqbjYA",

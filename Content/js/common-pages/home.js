@@ -29,6 +29,9 @@ $(document).ready(function () {
       // render personaL Playlist
       this.renderPersonalPlaylist();
 
+      // render personal album
+      this.renderPersonalAlbum();
+
       // render personal MV
       this.renderPersonalMV();
   
@@ -578,8 +581,65 @@ $(document).ready(function () {
   
       $("#render-playlist").html(playlists.join(""));
     },
+    renderPersonalAlbum: function() {
+      let albums = Home.PersonalAlbum.map((album, index) => {
+        return `
+        <div class="Album__item col-lg-3">
+          <div class="Album__item-image position-relative">
+              <img src="${album.albumImage}" alt="">
+              <div class="Album__item-overlay position-absolute">
+                  <div class="Album__item-play position-absolute">
+                      <i id="Album-play-icon" class="bi bi-play-circle"></i>
+                  </div>
+              </div>
+          </div>
+          <div class="Album__item-desc">
+              <div class="d-lg-flex align-items-center">
+                  <div class="Album__item-content">
+                      <h3 class="Album__item-title">${album.albumName}</h3>
+                  </div>
+              </div>
+          </div>
+        </div>
+        `
+      });
+
+      $("#render__personal-Album").html(albums.join(""));
+    },
     renderPersonalMV: function() {
-      
+      let MVs = Home.PersonalMV.map((mv, index) => {
+        return `
+        <div class="MV__item col-lg-4">
+          <div class="MV__item-image position-relative">
+              <img src="${mv.MvImage}" alt="">
+              <div class="MV__item-overlay position-absolute">
+                  <a href="${mv.MvSource}" class="MV__item-play position-absolute">
+                      <i id="MV-play-icon" class="bi bi-play-circle"></i>
+                  </a>
+                  <div class="MV__item-duration position-absolute">
+                      <h3 id="MV-duration">${mv.MvDuration}</h3>
+                  </div>
+                  <div class="MV__item-remove position-absolute">
+                      <i id="MV-remove-icon" class="bi bi-x"></i>
+                  </div>
+              </div>
+          </div>
+          <div class="MV__item-desc">
+              <div class="d-lg-flex align-items-center">
+                  <div class="MV__item-avartar">
+                      <img src="${mv.AuthorAvatar}" alt="">
+                  </div>
+                  <div class="MV__item-content">
+                      <h3 class="MV__item-title">${mv.MvName}</h3>
+                      <p class="MV__item-author">${mv.MvAuthor}</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        `
+      });
+
+      $("#render__personal-MV").html(MVs.join(""));
     },
     renderPlaylistToTrack: function (playlist) {
       let songs = Home.PlaylistSong[playlist].map((song, index) => {
@@ -590,14 +650,14 @@ $(document).ready(function () {
                   <div class="col-lg-1 col-sm-1">
                       <i class="bi bi-music-note-beamed ml8 fz-14 song__icon-note"></i>
                   </div>
-                  <div class="col-lg-2 col-sm-2 position-relative">
+                  <div class="is-40px col-lg-2 col-sm-2 position-relative">
                       <img class="song__img" src="${song.image}" alt="">
                       <div class="song__icon position-absolute d-flex">
                           <img src="../Content/image/Icon/icon-playing.gif" class="song__icon-playing playing d-none">
                           <i class="bi bi-play-fill fz-20 song__icon-pause text-white d-none"></i>
                       </div>
-                  </div>
-                  <div class="col-lg-9 col-sm-9">
+                  </div>                                                                                     
+                  <div class="col-lg-9 col-sm-9 ml8">
                       <div class="d-flex flex-column">
                           <h3 id="song__name" class="fz-14">
                               ${song.name}
