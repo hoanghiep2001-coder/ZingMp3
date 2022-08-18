@@ -1090,8 +1090,72 @@ body {
   width: 540px;
 }
 
+.container__right-header #header__with-search .header__search-area.active {
+  border-end-end-radius: 0;
+  border-end-start-radius: 0;
+  background-color: var(--primary-bg);
+}
+
 .container__right-header #header__with-search .header__search-area #search-icon {
   color: var(--text-placeholder);
+}
+
+.container__right-header #header__with-search #form-search #header__filter {
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--primary-bg);
+  border-end-end-radius: 20px;
+  border-end-start-radius: 20px;
+  padding: 12px 10px 12px;
+  margin-top: 36px;
+  border-top: 1px solid var(--border-primary);
+  display: none;
+}
+
+.container__right-header #header__with-search .header__search-area.active #header__filter {
+  display: block !important;
+}
+
+.container__right-header #header__with-search #form-search .header__filter-suggest {
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.container__right-header #header__with-search #form-search .header__lookingbefore-title,
+.container__right-header #header__with-search #form-search .header__suggest-title {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.container__right-header #header__with-search #form-search .header__suggest-list {
+
+}
+
+.container__right-header #header__with-search #form-search .header__suggest-item {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 10px;
+  line-height: 21px;
+  font-size: 12px;
+  background-color: var(--primary-bg);
+}
+
+.container__right-header #header__with-search #form-search .header__suggest-item:hover {
+  background-color: var(--alpha-bg);
+}
+
+.container__right-header #header__with-search #form-search .header__suggest-name {
+
+}
+
+.container__right-header #header__with-search #form-search .header__filter-lookingbefore {
+
+}
+
+.container__right-header #header__with-search #form-search .header__lookingbefore-title {
+  margin-top: 12px;
 }
 
 .container__right-header #header__with-search .header__search #search-keyword {

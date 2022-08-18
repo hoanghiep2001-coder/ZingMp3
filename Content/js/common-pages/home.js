@@ -17,6 +17,9 @@ $(document).ready(function () {
       this.handleMp3Event();
     },
     renderElement: function () {
+      // render suggest result searching bar
+      this.renderSuggestResultSearchBar();
+
       // render my playlist
       this.renderMyPlayListSongs();
   
@@ -389,6 +392,18 @@ $(document).ready(function () {
     },
   
     // render
+    renderSuggestResultSearchBar: function() {
+      let results = Home.SuggestResultSearchBar.map(result => {
+        return ` 
+        <li class="list-group-item header__suggest-item d-lg-flex">
+            <i class="bi bi-graph-up-arrow"></i>
+            <p class="header__suggest-name ml12">${result.name}</p>
+        </li>
+        `
+      });
+
+      $("#suggest-result").html(results.join(""));
+    },
     renderMyPlayListSongs: function () {
       let songs = Home.PlaylistSong[1].map((song, index) => {
         return `
@@ -657,7 +672,7 @@ $(document).ready(function () {
                       <img class="song__img" src="${song.image}" alt="">
                       <div class="song__icon position-absolute d-flex">
                           <img src="../Content/image/Icon/icon-playing.gif" class="song__icon-playing playing d-none">
-                          <i class="bi bi-play-fill fz-20 song__icon-pause text-white d-none"></i>
+                          <i class="bi bi-play-fill fz-20 song__icon-pause text-white d-none mt5 ml10"></i>
                       </div>
                   </div>                                                                                     
                   <div class="col-lg-9 col-sm-9 ml8">

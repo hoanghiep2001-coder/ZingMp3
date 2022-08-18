@@ -125,11 +125,27 @@
                             <i id="header__icon-prev" class="bi bi-arrow-left fz-24 header__search-icon mr20"></i>
                             <i id="header__icon-next" class="bi bi-arrow-right fz-24 header__search-icon mr20"></i>
                             <form id="form-search">
-                                <div id="search-container" class="header__search-area d-flex align-items-center position-relative">
+                                <div id="search-container" class="header__search-area position-relative d-flex align-items-center position-relative">
                                     <i id="search-icon"
                                         class="bi bi-search position-absolute fz-20 ml12 cursor-pointer"></i>
-                                    <input id="search-keyword" name="" class="padl40 padr32 fz-14" value="" type="text"
+                                    <input id="search-keyword" name="SearchResult" value="" class="padl40 padr32 fz-14" type="text"
                                         placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát...">
+                                    <!--  filter result -->
+                                    <div id="header__filter" class="position-absolute">
+                                        <div class="header__filter-suggest padb8">
+                                            <h3 class="header__suggest-title">
+                                                Đề xuất cho bạns
+                                            </h3>
+                                            <ul id="suggest-result" class="list-group list-group-flush header__suggest-list">
+
+                                            </ul>
+                                        </div>
+                                        <div class="header__filter-lookingbefore">
+                                            <h3 class="header__lookingbefore-title">Tìm kiếm gần đây</h3>
+
+                                        </div>
+                                    </div>
+                                    <!--  // end filter result-->
                                 </div>
                             </form>
                         </div>

@@ -577,7 +577,9 @@
 .mt1 {
     margin-top: 1px !important;
 }
-
+.mt5 {
+    margin-top: 5px !important;
+}
 .mt4 {
     margin-top: 4px !important;
 }

@@ -5,6 +5,23 @@ var Home = (function () {
     },
     onSomething: function () {
     },
+    SuggestResultSearchBar: [
+      {
+        name: "Karaoke",
+      },
+      {
+        name: "Tháng 4 là lời nói dối của em",
+      },
+      {
+        name: "Chạy ngay đi",
+      },
+      {
+        name: "PODCAST",
+      },
+      {
+        name: "Sơn Tùng - MTP",
+      },
+    ],
     PlaylistSong: {
       1: [
         {
@@ -863,10 +880,14 @@ var Home = (function () {
         dataPlaylist: ""
       },
     ],
+
     clickAddClass: function($selector, $className) {
       $selector.unbind().click(function (e) {
-        console.log(this);
+        e.stopPropagation();
         $selector.addClass($className);
+      });
+      $(".wrapper").unbind().click(function (e) {
+        $selector.removeClass($className)
       });
     },
   };
