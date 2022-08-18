@@ -46,6 +46,9 @@ $(document).ready(function () {
       this.setWidthForHeaderWidthSearch();
     },
     handleEventDOM: function () {
+      // display filter result of search bar
+      Home.clickAddClass($("#search-container"), "active");
+
       // display content of tab pane
       this.displayContentOfTabPane();
   

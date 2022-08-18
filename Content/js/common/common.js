@@ -4,7 +4,6 @@ var Home = (function () {
       this.onSomething();
     },
     onSomething: function () {
-
     },
     PlaylistSong: {
       1: [
@@ -864,6 +863,12 @@ var Home = (function () {
         dataPlaylist: ""
       },
     ],
+    clickAddClass: function($selector, $className) {
+      $selector.unbind().click(function (e) {
+        console.log(this);
+        $selector.addClass($className);
+      });
+    },
   };
 })();
 
