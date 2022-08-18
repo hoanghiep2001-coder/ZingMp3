@@ -94,7 +94,6 @@ body {
 
 .container-default .container__right-header.is-sticky {
   background-color: var(--layout-bg);
-  z-index: 1000;
   box-shadow: 0 3px 5px var(--sticky-header-box-shadow);
 }
 
@@ -1067,6 +1066,7 @@ body {
   right: 0;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 .container__right-header.is-sticky {
