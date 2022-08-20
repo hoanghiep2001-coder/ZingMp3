@@ -902,29 +902,53 @@ var Home = (function () {
         author: "Bích Phương, Sơn Tùng - MTP, Đông Nhi, Ánh Phương, Dương Hiệp",
       },
     ],
-    ExploreMusicForDaysPlaylist: [
-      Monday = [
+    ExploreMusicForDaysPlaylist: {
+      Monday: [
 
       ],
-      Tuesday = [
+      Tuesday: [
 
       ],
-      Wednesday = [
+      Wednesday: [
 
       ],
-      Thursday = [
+      Thursday: [
 
       ],
-      Friday = [
+      Friday: [
 
       ],
-      Saturday = [
-
+      Saturday: [
+        {
+          name: "Nhạc Cho Thứ Bảy",
+          image: "../Content/image/Playlist/Explore/MusicForDays/Saturday.webp",
+          author: "Thứ 7 là phải nhảy theo những track Remix thịnh hành nhất hiện nay",
+        },
+        {
+          name: "K-Pop Dance",
+          image: "../Content/image/Playlist/Explore/MusicForDays/kpopdance.webp",
+          author: "Đốt cháy năng lượng bằng những vũ đạo đỉnh nhất thế giới hiện tại"
+        },
+        {
+          name: "Nhà Nhà Nghe Gì",
+          image: "../Content/image/Playlist/Explore/MusicForDays/onhanghegi.webp",
+          author: "Va vào những giai điệu nhà nhà đều nghe"
+        },
+        {
+          name: "EDM Now",
+          image: "../Content/image/Playlist/Explore/MusicForDays/edmnow.webp",
+          author: "EDM Âu Mỹ mới ra lò, 1 click là lên luôn"
+        },
+        {
+          name: "Lắc Lư Cho Hết Buồn",
+          image: "../Content/image/Playlist/Explore/MusicForDays/lacluchohetbuon.webp",
+          author: "Lắc lự quên hết mọi buồn phiền với những giai điệu hay nhất hiện nay"
+        },
       ],
-      Sunday = [
+      Sunday: [
 
       ]
-    ],
+    },
     clickAddClass: function($selector, $className) {
       $selector.unbind().click(function (e) {
         e.stopPropagation();

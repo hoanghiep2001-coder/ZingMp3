@@ -43,6 +43,9 @@ $(document).ready(function () {
 
       // render explore suggest playlist
       this.renderExploreSuggestPlaylist();
+
+      // render explore music for days
+      this.renderExploreMusicForDays();
     },
     cssHtml: function () {
       // set height for left side bar
@@ -778,6 +781,236 @@ $(document).ready(function () {
       });
 
       $("#render-explore-suggest").html(playlists.join(""));
+    },
+    renderExploreMusicForDays: function() {
+      let date = new Date();
+      let dayOfWeek = date.getDay();
+      
+      if(dayOfWeek == 1) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Monday.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-musicForDays").html(playlists.join(""));
+      } else
+
+      if(dayOfWeek == 2) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Tuesday.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-musicForDays").html(playlists.join(""));
+      } else
+
+      if(dayOfWeek == 3) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Wednesday.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-musicForDays").html(playlists.join(""));
+      } else
+
+      if(dayOfWeek == 4) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Thursday.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-musicForDays").html(playlists.join(""));
+      } else
+
+      if(dayOfWeek == 5) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Friday.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-musicForDays").html(playlists.join(""));
+      } else
+
+      if(dayOfWeek == 6) {
+              let playlists = Home.ExploreMusicForDaysPlaylist.Saturday.map(playlist => {
+              return `
+              <div class="playlist__card col-lg-3 mt20" data-playlist="">
+                  <div class="playlist__div position-relative">
+                      <img src="${playlist.image}" alt="" class="playlist__div-img">
+                      <div class="playlist__div playlist__div-icon position-absolute ">
+                          <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                              <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                              <div class="playlist__div-rounded text-center">
+                                  <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                                  <i class="bi bi-play-fill fz-36"></i>
+                              </div>
+                              <i class="bi bi-three-dots fz-20"></i>                                                   
+                          </div>
+                      </div>
+                  </div>
+                  <div class="playlist__div-content">
+                      <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                          ${playlist.name}
+                      </h3>
+                      <p class="playlist__div-author fz-12">
+                          ${playlist.author}
+                      </p>
+                  </div>
+              </div>
+              `
+            });
+
+            $("#render-musicForDays").html(playlists.join(""));
+      } else
+
+      if(dayOfWeek == 7) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Sunday.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-musicForDays").html(playlists.join(""));
+      }      
+      
+      console.log(dayOfWeek);
     },
   
     // function
