@@ -230,6 +230,8 @@ body {
   margin: 0 12px;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div,
 .container-default #carePlaylist .playlist__div,
 .container-default .container__right-body #library #playlist .playlist__div {
   padding-bottom: 100%;
@@ -240,17 +242,23 @@ body {
   border-radius: 6px;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div:hover .playlist__div-img,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div:hover .playlist__div-img,
 .container-default #carePlaylist .playlist__div:hover .playlist__div-img,
 .container-default .container__right-body #library #playlist .playlist__div:hover .playlist__div-img {
   transform: scale(1.1);
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div:hover .playlist__div-icon,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div:hover .playlist__div-icon,
 .container-default #carePlaylist .playlist__div:hover .playlist__div-icon,
 .container-default .container__right-track .track__cd:hover .playlist__div-icon,
 .container-default .container__right-body #library #playlist .playlist__div:hover .playlist__div-icon {
   display: block;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-img,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-img,
 .container-default #carePlaylist .playlist__div-img,
 .container-default .container__right-body #library #playlist .playlist__div-img {
   width: 100%;
@@ -258,6 +266,8 @@ body {
   transition: .5s ease-out;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-icon,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-icon,
 .container-default  #carePlaylist .playlist__div-icon,
 .container-default .container__right-track .track__cd .playlist__div-icon,
 .container-default .container__right-body #library #playlist .playlist__div-icon {
@@ -269,12 +279,16 @@ body {
   display: none;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-icon i,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-icon i,
 .container-default #carePlaylist .playlist__div-icon i,
 .container-default .container__right-track .track__cd .playlist__div-icon i,
 .container-default .container__right-body #library #playlist .playlist__div-icon i {
   color: #fff;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-icon .playlist__div-actions,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-icon .playlist__div-actions,
 .container-default #carePlaylist .playlist__div-icon .playlist__div-actions,
 .container-default .container__right-track .track__cd .playlist__div-icon .playlist__div-actions,
 .container-default .container__right-body #library #playlist .playlist__div-icon .playlist__div-actions {
@@ -286,6 +300,8 @@ body {
   width: 100%;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-rounded,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-rounded,
 .container-default #carePlaylist .playlist__div-rounded,
 .container-default .container__right-track .track__cd .playlist__div-rounded,
 .container-default .container__right-body #library #playlist .playlist__div-rounded {
@@ -295,6 +311,9 @@ body {
   height: 56px;
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-author,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-author,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-name,
 .container-default .container__right-body #album #render__personal-Album .Album__item-desc .Album__item-content .Album__item-title,
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-title,
 .container-default .container__right-body #mv #render__personal-MV .MV__item-desc .MV__item-content .MV__item-author,
@@ -311,6 +330,8 @@ body {
   color: var(--text-primary);
 }
 
+.container-default #explore .container__right-body #render-musicForDays .playlist__div-name:hover,
+.container-default #explore .container__right-body #render-explore-suggest .playlist__div-name:hover,
 .container-default #carePlaylist .playlist__div-name:hover, 
 .container-default .container__right-body #library #playlist .playlist__div-name:hover {
   color: var(--text-item-hover)
@@ -998,6 +1019,7 @@ body {
   z-index: 10000;
   top: 0;
   bottom: 0;
+  height: calc(100% - 98px);
 }
 
 .container__left section#nav-sidebar-2 {
@@ -1050,6 +1072,7 @@ body {
 
 .container__right {
   overflow: hidden auto;
+  max-height: calc(100% - 98px);
 }
 
 .container__right::-webkit-scrollbar {

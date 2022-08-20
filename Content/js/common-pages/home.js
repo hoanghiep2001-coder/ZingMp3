@@ -40,6 +40,9 @@ $(document).ready(function () {
   
       // render maybe you care playlist
       this.renderMaybeYouCarePlaylist();
+
+      // render explore suggest playlist
+      this.renderExploreSuggestPlaylist();
     },
     cssHtml: function () {
       // set height for left side bar
@@ -324,6 +327,13 @@ $(document).ready(function () {
           let dataIndex = $this.data("index");
           let $playingIcon = $this.find(".song__icon-playing");
           let $dataPlaylist = $this.data("playlist");
+
+          if($dataPlaylist == 1) {
+            _this.renderPlaylistToTrack(1);
+            $("#track-cdThumb").attr("src", "../Content/image/Avartar/Avatar.jpg");
+            $(".track__name h3").html("Nhạc Cá Nhân");
+            $(`.song[data-index="${dataIndex}"]`).addClass("active");
+          }
           
           _this.removePlayingIcon();
           _this.isPlaying = true;
@@ -738,6 +748,37 @@ $(document).ready(function () {
   
       $("#carePlaylist").html(playlists.join(""));
     },
+    renderExploreSuggestPlaylist: function() {
+      let playlists = Home.ExploreSuggestList.map(playlist => {
+        return `
+        <div class="playlist__card col-lg-3 mt20" data-playlist="">
+            <div class="playlist__div position-relative">
+                <img src="${playlist.image}" alt="" class="playlist__div-img">
+                <div class="playlist__div playlist__div-icon position-absolute ">
+                    <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                        <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                        <div class="playlist__div-rounded text-center">
+                            <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                            <i class="bi bi-play-fill fz-36"></i>
+                        </div>
+                        <i class="bi bi-three-dots fz-20"></i>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="playlist__div-content">
+                <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                    ${playlist.name}
+                </h3>
+                <p class="playlist__div-author fz-12">
+                    ${playlist.author}
+                </p>
+            </div>
+        </div>
+        `
+      });
+
+      $("#render-explore-suggest").html(playlists.join(""));
+    },
   
     // function
     getDataTheme: function () {
@@ -922,8 +963,9 @@ $(document).ready(function () {
         });
     },
     setInnerHeightForSideBar: function () {
-      let height = window.innerHeight;
-      let playerContainer = document.querySelector(".container__player").offsetHeight ;
+      // let height = window.innerHeight;
+      // let playerContainer = document.querySelector(".container__player").offsetHeight ;
+
       setTimeout(function () {
         let createPlaylistOffsetTop = $("#create-playlist").offset().top;
         let navSidebar2OffsetTop = $("#nav-sidebar-2").offset().top;
@@ -931,15 +973,13 @@ $(document).ready(function () {
         $("#nav-sidebar-2").css({
           "max-height": `${navSidebar2Height}`,
         });
-      }, 100);
-      let countedHeight = (height - playerContainer) + "px";
-  
-      $("#container__left").css({
-        "max-height": `${countedHeight}`,
-      });
-      $(".container__right").css({
-        "max-height": `${countedHeight}`,
-      });
+      }, 100);  
+      // $("#container__left").css({
+      //   "max-height": `${countedHeight}`,
+      // });
+      // $(".container__right").css({
+      //   "max-height": `${countedHeight}`,
+      // });
     },
     setWidthForHeaderWidthSearch: function () {
       let containerLeft = $("#container__left")[0].offsetWidth + "px";
@@ -1025,7 +1065,7 @@ $(document).ready(function () {
       $("#player__img")
         .unbind()
         .click(function (e) {
-          $("#my-playlist").html("");
+          // $("#my-playlist").html("");
           $(".container__right-content.active").removeClass("active");
           $(".container__right-track").addClass("active");
           $(".container__right-content.active").removeClass("active");
@@ -1035,25 +1075,30 @@ $(document).ready(function () {
     },
     swapTapSideBar: function () {
       let _this = this;
+
       $(".tap-sideBar")
         .unbind()
         .click(function (e) {
+          
           $(".tap-sideBar").removeClass("active");
           $(".container__right-content").removeClass("active");
           $(this).addClass("active");
   
           let tapPersonal = document.querySelector(".tab-personal.active");
-          let tapExplore = document.querySelector(".tap-explore.active");
-          let tapRanking = document.querySelector(".tap-ranking.active");
-          let tapRadio = document.querySelector(".tap-radio.active");
-          let tapFollow = document.querySelector(".tap-follow.active");
+          let tapExplore = document.querySelector(".tab-explore.active");
+          let tapRanking = document.querySelector(".tab-ranking.active");
+          let tapRadio = document.querySelector(".tab-radio.active");
+          let tapFollow = document.querySelector(".tab-follow.active");
   
           if (tapPersonal) {
             $(".container__right-personal").addClass("active");
             _this.renderMyPlayListSongs();
             _this.handleMp3Event();
+          } else if(tapExplore) {
+            $(".container__right-explore").addClass("active");
           }
         });
+      
     },
     playSong: function () {
       let activeSong = $(".song.active");

@@ -241,9 +241,9 @@
                     </section>
                 </div>
 
-                <div id="container__right">
+                <div id="container__right" class="padr60 padl60 pad-sm-l12 pad-sm-r12">
                     <!-- personal -->
-                    <div class="container__right-content container__right-personal active padr60 padl60 pad-sm-l12 pad-sm-r12">
+                    <div class="container__right-content container__right-personal active">
                         <div class="container__right-body">
 
                             <!-- library -->
@@ -414,8 +414,60 @@
                     </div>
                     <!-- // end personal -->
 
+                    <!-- explore -->
+                    <div id="explore" class="container__right-content container__right-explore">
+                        <div class="container__right-body">
+                             <!-- explore sugeest -->
+                            <div class="explore__suggest">
+                                <h3 class="explore__suggest-title fz-20">
+                                    Có Thể Bạn Muốn Nghe
+                                </h3>
+                                <!-- render explore suggest -->
+                                <div id="render-explore-suggest" class="row">
+                                    
+                                </div>
+                            </div>
+                            <!-- // end explore suggest -->
+
+                            <!-- explore music for days -->
+                            <div class="explore__musicForDays">
+                                <h3 class="explore__musicForDays-title fz-20">
+                                    Cuối tuần lên nhạc
+                                </h3>
+                                <!-- render explore suggest -->
+                                <div id="render-musicForDays" class="row">
+                                    <div class="playlist__card col-lg-3 mt20" data-playlist="">
+                                        <div class="playlist__div position-relative">
+                                            <img src="../Content/image/Playlist/MusicForDays/edmnow.webp" alt="" class="playlist__div-img">
+                                            <div class="playlist__div playlist__div-icon position-absolute ">
+                                                <div class="playlist__div-actions d-flex align-items-center position-absolute">
+                                                    <i class="bi bi-heart fz-20 cursor-pointer"></i>
+                                                    <div class="playlist__div-rounded text-center">
+                                                        <img with="18" height="18" class="mt16 d-none" src="../Content/image/Icon/icon-playing.gif" alt="">
+                                                        <i class="bi bi-play-fill fz-36"></i>
+                                                    </div>
+                                                    <i class="bi bi-three-dots fz-20"></i>                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="playlist__div-content">
+                                            <h3 class="playlist__div-name mt8 mb4 fz-14 cursor-pointer fw-600">
+                                                ${playlist.name}
+                                            </h3>
+                                            <p class="playlist__div-author fz-12">
+                                                ${playlist.author}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // explore music for days -->
+                        </div>
+                    </div>
+                    <!-- // end explore -->
+
                     <!-- playlist track -->
-                    <div class="container__right-content container__right-track padr60 padl60 pad-sm-r12 pad-sm-l12">
+                    <div class="container__right-content container__right-track">
 
                         <div class="row mt72 padt20 ">
                             <div class="col-lg-4">

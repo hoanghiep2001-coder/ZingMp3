@@ -880,7 +880,51 @@ var Home = (function () {
         dataPlaylist: ""
       },
     ],
+    ExploreSuggestList: [
+      {
+        image: "../Content/image/Playlist/Explore/Suggest/ballad.webp",
+        name: "2010s Ballad",
+        author: "Sam Smith, Adele, Calum Scott, Taylor Swift, Alan Walker, Justin Bieber",
+      },
+      {
+        image: "../Content/image/Playlist/Explore/Suggest/edm.webp",
+        name: "2015s EDM",
+        author: "Alan Walker, Martin Gatrix, K-ICM, TheFatRat",
+      },
+      {
+        image: "../Content/image/Playlist/Explore/Suggest/remix.webp",
+        name: "2020s Remix",
+        author: "K-ICM, Masew, Tilo",
+      },
+      {
+        image: "../Content/image/Playlist/Explore/Suggest/vpop.webp",
+        name: "Best VPOP",
+        author: "Bích Phương, Sơn Tùng - MTP, Đông Nhi, Ánh Phương, Dương Hiệp",
+      },
+    ],
+    ExploreMusicForDaysPlaylist: [
+      Monday = [
 
+      ],
+      Tuesday = [
+
+      ],
+      Wednesday = [
+
+      ],
+      Thursday = [
+
+      ],
+      Friday = [
+
+      ],
+      Saturday = [
+
+      ],
+      Sunday = [
+
+      ]
+    ],
     clickAddClass: function($selector, $className) {
       $selector.unbind().click(function (e) {
         e.stopPropagation();
