@@ -3,17 +3,17 @@ $(document).ready(function () {
   let Mp3Player = {
     init: function () {
       this.renderElement();
-  
+
       this.cssHtml();
-  
+
       this.handleEventDOM();
-  
+
       this.handleWithPluin();
-  
+
       this.definePropertises();
-  
+
       this.loadCurrentSong(1);
-  
+
       this.handleMp3Event();
     },
     renderElement: function () {
@@ -22,13 +22,13 @@ $(document).ready(function () {
 
       // render my playlist
       this.renderMyPlayListSongs();
-  
+
       // render personal artists
       this.renderPersonalArtists();
-  
+
       // render layout theme
       this.renderLayoutTheme();
-  
+
       // render personaL Playlist
       this.renderPersonalPlaylist();
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
       // render personal MV
       this.renderPersonalMV();
-  
+
       // render maybe you care playlist
       this.renderMaybeYouCarePlaylist();
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
     cssHtml: function () {
       // set height for left side bar
       this.setInnerHeightForSideBar();
-  
+
       // set width for search header
       this.setWidthForHeaderWidthSearch();
     },
@@ -60,25 +60,25 @@ $(document).ready(function () {
 
       // display content of tab pane
       this.displayContentOfTabPane();
-  
+
       // sticky header with search when scroll down
       this.stickyHeaderWithSearch();
-  
+
       // play list song when click library play btn
       this.playListSong();
-  
+
       // active list song playing button
       this.activeListSongPlaying();
-  
+
       // open layout container modal
       this.openLayoutContainerModal();
-  
+
       // get data theme and set theme background
       this.getDataTheme();
-  
+
       // open playlist in playlist track
       this.openPlaylistInPlaylistTrack();
-  
+
       // change main content when click tap side bar
       this.swapTapSideBar();
     },
@@ -95,13 +95,22 @@ $(document).ready(function () {
         slidesToScroll: 1,
         responsive: [
           {
+            breakpoint: 2500,
+            settings: {
+              slidesToShow: 6,
+              slidesToScroll: 1,
+              infinite: true,
+              variableWidth: false,
+            },
+          },
+          {
             breakpoint: 768,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
               infinite: true,
               variableWidth: false,
-            }
+            },
           },
           {
             breakpoint: 414,
@@ -110,9 +119,9 @@ $(document).ready(function () {
               slidesToScroll: 1,
               infinite: true,
               variableWidth: false,
-            }
+            },
           },
-        ]
+        ],
       });
 
       $("#render-playlist").slick({
@@ -128,7 +137,7 @@ $(document).ready(function () {
               slidesToScroll: 1,
               infinite: true,
               variableWidth: false,
-            }
+            },
           },
           {
             breakpoint: 414,
@@ -137,14 +146,17 @@ $(document).ready(function () {
               slidesToScroll: 1,
               infinite: true,
               variableWidth: false,
-            }
+            },
           },
-        ]
+        ],
       });
-  
-      $(".container-default .slick-next.slick-arrow").addClass("position-absolute");
-      $(".container-default .slick-prev.slick-arrow").addClass("position-absolute");
-      
+
+      $(".container-default .slick-next.slick-arrow").addClass(
+        "position-absolute"
+      );
+      $(".container-default .slick-prev.slick-arrow").addClass(
+        "position-absolute"
+      );
     },
     currentPlaylistIndex: 1,
     currentIndex: 0,
@@ -154,7 +166,7 @@ $(document).ready(function () {
     isMuted: false,
     handleMp3Event: function () {
       let _this = this;
-  
+
       // play / pause song
       $("#play-btn")
         .unbind()
@@ -162,7 +174,7 @@ $(document).ready(function () {
           e.preventDefault();
           $(".song__icon-playing").addClass("d-none");
           $(".song__icon-pause").addClass("d-none");
-  
+
           if (_this.isPlaying) {
             _this.isPlaying = false;
             _this.pauseSong();
@@ -171,28 +183,34 @@ $(document).ready(function () {
             _this.playSong();
           }
         });
-  
-      // play/pause song when click play button in track cd thumb
-      $("#track__cd-playBtn").unbind().click(function(e) {
-        _this.isPlaying = true;
-        _this.playSong();
-      });
-      $("#track__cd-pauseBtn").unbind().click(function (e) {
-        _this.isPlaying = false;
-        $('.song__icon-playing').addClass("d-none");
-        _this.pauseSong();
-      });
 
-      $("#track__controls-play").unbind().click(function (e) {
-        if(_this.isPlaying) {
-          _this.isPlaying = false;
-          _this.pauseSong();
-        } else {
+      // play/pause song when click play button in track cd thumb
+      $("#track__cd-playBtn")
+        .unbind()
+        .click(function (e) {
           _this.isPlaying = true;
           _this.playSong();
-        }
-      });
-  
+        });
+      $("#track__cd-pauseBtn")
+        .unbind()
+        .click(function (e) {
+          _this.isPlaying = false;
+          $(".song__icon-playing").addClass("d-none");
+          _this.pauseSong();
+        });
+
+      $("#track__controls-play")
+        .unbind()
+        .click(function (e) {
+          if (_this.isPlaying) {
+            _this.isPlaying = false;
+            _this.pauseSong();
+          } else {
+            _this.isPlaying = true;
+            _this.playSong();
+          }
+        });
+
       // next / prev song
       $("#next-song")
         .unbind()
@@ -200,7 +218,7 @@ $(document).ready(function () {
           _this.isPlaying = true;
           $(".song__icon-playing").addClass("d-none");
           $(".song__icon-pause").addClass("d-none");
-  
+
           if (_this.isRandom) {
             _this.playRandomSong();
             _this.playSong();
@@ -218,7 +236,7 @@ $(document).ready(function () {
           _this.removePlayingIcon();
           _this.playSong();
         });
-  
+
       // random song
       $("#random-song")
         .unbind()
@@ -231,7 +249,7 @@ $(document).ready(function () {
             $(this).toggleClass("active");
           }
         });
-  
+
       // repeat song
       $("#repeat-song")
         .unbind()
@@ -244,13 +262,13 @@ $(document).ready(function () {
             $(this).toggleClass("active");
           }
         });
-  
+
       // current time of song
       $("#audio")[0].ontimeupdate = function (e) {
         let currentTime = this.currentTime;
         let duration = this.duration;
         let percentSong = Math.floor((currentTime / duration) * 100);
-  
+
         $(".time-start p").html(String(currentTime).toMMSS());
         $("#range").css({
           background: `linear-gradient(to right,
@@ -261,12 +279,12 @@ $(document).ready(function () {
         });
         $("#range").val(percentSong);
       };
-  
+
       $("#audio")[0].onloadedmetadata = function (e) {
         let currentTime = this.currentTime;
         let duration = this.duration;
         let percentSong = Math.floor((currentTime / duration) * 100);
-  
+
         $("#range").css({
           background: `linear-gradient(to right,
              var(--progressbar-active-bg) 0%,
@@ -275,7 +293,7 @@ $(document).ready(function () {
               var(--progressbar-player-bg) 100%)`,
         });
         $("#range").val(percentSong);
-  
+
         $("#volumn").css({
           background: `linear-gradient(to right,
              var(--progressbar-active-bg) 0%,
@@ -284,7 +302,7 @@ $(document).ready(function () {
                 var(--progressbar-player-bg) 100%)`,
         });
       };
-  
+
       // seek song
       $("#range")
         .unbind()
@@ -293,25 +311,24 @@ $(document).ready(function () {
           let seekTime = $(this).val();
           let currentTime =
             (Number(seekTime) * Number($("#audio")[0].duration)) / 100;
-  
+
           $("#audio")[0].currentTime = currentTime;
           _this.playSong();
         });
-  
+
       // next song when song ended
       $("#audio")[0].onended = function (e) {
-        
         if (_this.isRandom) {
           _this.playRandomSong();
           $(".song__icon-pause").addClass("d-none");
           let $playingIcon = $(".song.active").find(".song__icon-playing");
           $playingIcon.removeClass("d-none");
         }
-  
+
         if (_this.isRepeat) {
           _this.playSong();
         }
-  
+
         if ((_this.isRandom && _this.isRepeat) == false) {
           _this.currentIndex++;
           _this.loadCurrentSong(_this.currentPlaylistIndex);
@@ -319,40 +336,45 @@ $(document).ready(function () {
           _this.playSong();
         }
       };
-  
+
       // play song when click the playlist
       $(".song")
         .unbind()
         .click(function (e) {
           e.stopPropagation();
-  
+
           let $this = $(this);
           let dataIndex = $this.data("index");
           let $playingIcon = $this.find(".song__icon-playing");
           let $dataPlaylist = $this.data("playlist");
 
-          if($dataPlaylist == 1) {
+          if ($dataPlaylist == 1) {
             _this.renderPlaylistToTrack(1);
-            $("#track-cdThumb").attr("src", "../Content/image/Avartar/Avatar.jpg");
+            $("#track-cdThumb").attr(
+              "src",
+              "../Content/image/Avartar/Avatar.jpg"
+            );
             $(".track__name h3").html("Nhạc Cá Nhân");
             $(`.song[data-index="${dataIndex}"]`).addClass("active");
           }
-          
+
           _this.removePlayingIcon();
           _this.isPlaying = true;
           _this.currentIndex = dataIndex;
           _this.currentPlaylistIndex = $dataPlaylist;
           _this.loadCurrentSong(_this.currentPlaylistIndex);
           _this.handleMp3Event();
-  
+
           $(".song__icon-playing").addClass("d-none");
           $this.addClass("active");
           $playingIcon.removeClass("d-none");
           _this.playSong();
         });
-  
-        // stop play when click current song
-        $('.song.active').unbind().click(function (e) {
+
+      // stop play when click current song
+      $(".song.active")
+        .unbind()
+        .click(function (e) {
           if (_this.isPlaying) {
             _this.isPlaying = false;
             $(".song__icon-playing").addClass("d-none");
@@ -362,7 +384,7 @@ $(document).ready(function () {
             _this.playSong();
           }
         });
-  
+
       // handle volumn of Song
       $("#volumn")
         .unbind()
@@ -376,7 +398,7 @@ $(document).ready(function () {
                   var(--progressbar-player-bg) 100%)`,
           });
         });
-  
+
       // mute volume when click the icon volume
       $(".volume-btn")
         .unbind()
@@ -394,7 +416,7 @@ $(document).ready(function () {
           }
         });
     },
-  
+
     // defineProp
     definePropertises: function () {
       Object.defineProperty(this, "currentPlaylist", {
@@ -403,16 +425,16 @@ $(document).ready(function () {
         },
       });
     },
-  
+
     // render
-    renderSuggestResultSearchBar: function() {
-      let results = Home.SuggestResultSearchBar.map(result => {
+    renderSuggestResultSearchBar: function () {
+      let results = Home.SuggestResultSearchBar.map((result) => {
         return ` 
         <li class="list-group-item header__suggest-item d-lg-flex">
             <i class="bi bi-graph-up-arrow"></i>
             <p class="header__suggest-name ml12">${result.name}</p>
         </li>
-        `
+        `;
       });
 
       $("#suggest-result").html(results.join(""));
@@ -464,7 +486,7 @@ $(document).ready(function () {
         </div>
           `;
       });
-  
+
       $("#my-playlist").html(songs.join(""));
     },
     renderPersonalArtists: function () {
@@ -532,7 +554,7 @@ $(document).ready(function () {
                                              </div>
           `;
       });
-  
+
       $("#render-artist").html(artists.join(""));
     },
     renderLayoutTheme: function () {
@@ -556,7 +578,7 @@ $(document).ready(function () {
           </div>
           `;
       });
-  
+
       let topics = Home.TopicLayoutTheme.map((topic) => {
         return `
         <div class="col-lg-2-4 layout__content-parent">
@@ -574,10 +596,10 @@ $(document).ready(function () {
         <h3 class="layout__content-name">
             ${topic.name}
         </h3>
-    </div>
+      </div>
         `;
       });
-  
+
       $(".layout__content-artist").html(artists.join(""));
       $(".layout__content-topic").html(topics.join(""));
     },
@@ -609,10 +631,10 @@ $(document).ready(function () {
         </div>
         `;
       });
-  
+
       $("#render-playlist").html(playlists.join(""));
     },
-    renderPersonalAlbum: function() {
+    renderPersonalAlbum: function () {
       let albums = Home.PersonalAlbum.map((album, index) => {
         return `
         <div class="Album__item col-lg-3">
@@ -632,12 +654,12 @@ $(document).ready(function () {
               </div>
           </div>
         </div>
-        `
+        `;
       });
 
       $("#render__personal-Album").html(albums.join(""));
     },
-    renderPersonalMV: function() {
+    renderPersonalMV: function () {
       let MVs = Home.PersonalMV.map((mv, index) => {
         return `
         <div class="MV__item col-lg-4">
@@ -667,7 +689,7 @@ $(document).ready(function () {
               </div>
           </div>
         </div>
-        `
+        `;
       });
 
       $("#render__personal-MV").html(MVs.join(""));
@@ -717,10 +739,10 @@ $(document).ready(function () {
       </div>
         `;
       });
-  
+
       $("#render-track").html(songs.join(""));
     },
-    renderMaybeYouCarePlaylist: function() {
+    renderMaybeYouCarePlaylist: function () {
       let playlists = Home.MaybeYouCareAboutList.map((playlist) => {
         return `
         <div class="playlist__card col" data-playlist="${playlist.dataPlaylist}">
@@ -748,11 +770,11 @@ $(document).ready(function () {
         </div>
         `;
       });
-  
+
       $("#carePlaylist").html(playlists.join(""));
     },
-    renderExploreSuggestPlaylist: function() {
-      let playlists = Home.ExploreSuggestList.map(playlist => {
+    renderExploreSuggestPlaylist: function () {
+      let playlists = Home.ExploreSuggestList.map((playlist) => {
         return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
@@ -777,18 +799,19 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
+        `;
       });
 
       $("#render-explore-suggest").html(playlists.join(""));
     },
-    renderExploreMusicForDays: function() {
+    renderExploreMusicForDays: function () {
       let date = new Date();
       let dayOfWeek = date.getDay();
-      
-      if(dayOfWeek == 1) {
-        let playlists = Home.ExploreMusicForDaysPlaylist.Monday.map(playlist => {
-        return `
+
+      if (dayOfWeek == 1) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Monday.map(
+          (playlist) => {
+            return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
                 <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -812,15 +835,16 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
-      });
+        `;
+          }
+        );
 
-      $("#render-musicForDays").html(playlists.join(""));
-      } else
-
-      if(dayOfWeek == 2) {
-        let playlists = Home.ExploreMusicForDaysPlaylist.Tuesday.map(playlist => {
-        return `
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Thứ Hai Thư Giãn");
+      } else if (dayOfWeek == 2) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Tuesday.map(
+          (playlist) => {
+            return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
                 <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -844,15 +868,16 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
-      });
+        `;
+          }
+        );
 
-      $("#render-musicForDays").html(playlists.join(""));
-      } else
-
-      if(dayOfWeek == 3) {
-        let playlists = Home.ExploreMusicForDaysPlaylist.Wednesday.map(playlist => {
-        return `
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Thứ Ba Dảy Đầm");
+      } else if (dayOfWeek == 3) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Wednesday.map(
+          (playlist) => {
+            return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
                 <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -876,15 +901,16 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
-      });
+        `;
+          }
+        );
 
-      $("#render-musicForDays").html(playlists.join(""));
-      } else
-
-      if(dayOfWeek == 4) {
-        let playlists = Home.ExploreMusicForDaysPlaylist.Thursday.map(playlist => {
-        return `
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Thứ Tư Vui Vẻ");
+      } else if (dayOfWeek == 4) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Thursday.map(
+          (playlist) => {
+            return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
                 <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -908,15 +934,16 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
-      });
+        `;
+          }
+        );
 
-      $("#render-musicForDays").html(playlists.join(""));
-      } else
-
-      if(dayOfWeek == 5) {
-        let playlists = Home.ExploreMusicForDaysPlaylist.Friday.map(playlist => {
-        return `
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Thứ Năm Thảnh Thơi");
+      } else if (dayOfWeek == 5) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Friday.map(
+          (playlist) => {
+            return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
                 <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -940,15 +967,16 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
-      });
+        `;
+          }
+        );
 
-      $("#render-musicForDays").html(playlists.join(""));
-      } else
-
-      if(dayOfWeek == 6) {
-              let playlists = Home.ExploreMusicForDaysPlaylist.Saturday.map(playlist => {
-              return `
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Thứ Sáu Đây Rồi");
+      } else if (dayOfWeek == 6) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Saturday.map(
+          (playlist) => {
+            return `
               <div class="playlist__card col-lg-3 mt20" data-playlist="">
                   <div class="playlist__div position-relative">
                       <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -972,15 +1000,16 @@ $(document).ready(function () {
                       </p>
                   </div>
               </div>
-              `
-            });
+              `;
+          }
+        );
 
-            $("#render-musicForDays").html(playlists.join(""));
-      } else
-
-      if(dayOfWeek == 7) {
-        let playlists = Home.ExploreMusicForDaysPlaylist.Sunday.map(playlist => {
-        return `
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Thứ Bảy Máu Chảy Về Tim");
+      } else if (dayOfWeek == 7) {
+        let playlists = Home.ExploreMusicForDaysPlaylist.Sunday.map(
+          (playlist) => {
+            return `
         <div class="playlist__card col-lg-3 mt20" data-playlist="">
             <div class="playlist__div position-relative">
                 <img src="${playlist.image}" alt="" class="playlist__div-img">
@@ -1004,15 +1033,17 @@ $(document).ready(function () {
                 </p>
             </div>
         </div>
-        `
-      });
+        `;
+          }
+        );
 
-      $("#render-musicForDays").html(playlists.join(""));
-      }      
-      
+        $("#render-musicForDays").html(playlists.join(""));
+        $(".explore__musicForDays-title").html("Cuối Tuần Lên Nhạc");
+      }
+
       console.log(dayOfWeek);
     },
-  
+
     // function
     getDataTheme: function () {
       $(".layout__content-useTheme")
@@ -1035,15 +1066,15 @@ $(document).ready(function () {
               Eiffel: "../Content/image/Background/eiffel.jpg",
             },
           };
-  
+
           if ($theme === "blueZMA") {
             $("html").attr("data-theme", "blue");
             $(".container__player").addClass("zma-player");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.BlueTheme.ZMA;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Topic.ZMA})`,
@@ -1051,11 +1082,11 @@ $(document).ready(function () {
           } else if ($theme === "darkEiffel") {
             $(".container__player").removeClass("zma-player");
             $("html").attr("data-theme", "dark");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.DarkTheme;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Topic.Eiffel})`,
@@ -1063,11 +1094,11 @@ $(document).ready(function () {
           } else if ($theme === "blueLondon") {
             $(".container__player").removeClass("zma-player");
             $("html").attr("data-theme", "blue");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.BlueTheme.London;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Topic.London})`,
@@ -1075,22 +1106,22 @@ $(document).ready(function () {
           } else if ($theme === "grayIU") {
             $(".container__player").removeClass("zma-player");
             $("html").attr("data-theme", "gray");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.GrayTheme.IU;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Artist.IU})`,
             });
           } else if ($theme === "grayJennie") {
             $("html").attr("data-theme", "gray");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.GrayTheme.Jennie;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Artist.Jennie})`,
@@ -1098,11 +1129,11 @@ $(document).ready(function () {
           } else if ($theme === "lightJisoo") {
             $("html").attr("data-theme", "light");
             $(".container__player").removeClass("zma-player");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.LightTheme.Jisoo;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Artist.Jisoo})`,
@@ -1110,11 +1141,11 @@ $(document).ready(function () {
           } else if ($theme === "blueRose") {
             $("html").attr("data-theme", "blue");
             $(".container__player").removeClass("zma-player");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.BlueTheme.Rose;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Artist.Rose})`,
@@ -1122,17 +1153,17 @@ $(document).ready(function () {
           } else if ($theme === "brownJack") {
             $("html").attr("data-theme", "brown");
             $(".container__player").removeClass("zma-player");
-  
+
             let styles = Home.CssRootTheme.map((item) => {
               return item.BrownTheme;
             });
-  
+
             htmlTag.style = styles.join("");
             $(containerBackground).css({
               "background-image": `url(${bg.Artist.Jack})`,
             });
           }
-  
+
           $(".modal-layout__container").removeClass("open");
         });
     },
@@ -1149,13 +1180,12 @@ $(document).ready(function () {
       $("#play-btn__pause").removeClass("d-none");
     },
     loadCurrentSong: function (playlist) {
-  
       $(".song").removeClass("active");
-  
+
       $(`.song[data-playlist="${this.currentPlaylistIndex}"]`)[
         this.currentIndex
       ].classList.add("active");
-  
+
       $("#player__img").attr(
         "src",
         `${Mp3Player.currentPlaylist[playlist][this.currentIndex].image}`
@@ -1183,12 +1213,14 @@ $(document).ready(function () {
           _this.loadCurrentSong(1);
           _this.handleMp3Event();
           _this.isPlaying = true;
-  
+
           $(".song")[0].classList.add("active");
           $(".container__right-content.active").removeClass("active");
           $(".container__right-track").addClass("active");
-          $("#container__left .ul-list .list-item.active").removeClass("active");
-  
+          $("#container__left .ul-list .list-item.active").removeClass(
+            "active"
+          );
+
           $("#play-btn__play").addClass("d-none");
           $("#play-btn__pause").removeClass("d-none");
           $("#my-playlist").html("");
@@ -1202,11 +1234,12 @@ $(document).ready(function () {
       setTimeout(function () {
         let createPlaylistOffsetTop = $("#create-playlist").offset().top;
         let navSidebar2OffsetTop = $("#nav-sidebar-2").offset().top;
-        let navSidebar2Height = (createPlaylistOffsetTop - navSidebar2OffsetTop) + "px";
+        let navSidebar2Height =
+          createPlaylistOffsetTop - navSidebar2OffsetTop + "px";
         $("#nav-sidebar-2").css({
           "max-height": `${navSidebar2Height}`,
         });
-      }, 100);  
+      }, 100);
       // $("#container__left").css({
       //   "max-height": `${countedHeight}`,
       // });
@@ -1216,7 +1249,7 @@ $(document).ready(function () {
     },
     setWidthForHeaderWidthSearch: function () {
       let containerLeft = $("#container__left")[0].offsetWidth + "px";
-  
+
       $("#header__with-search").css({
         "margin-left": `${containerLeft}`,
       });
@@ -1227,7 +1260,7 @@ $(document).ready(function () {
         .click(function (e) {
           let $this = $(this);
           let $parent = $this.closest(".nav-item");
-  
+
           $(".nav-item").removeClass("active");
           $parent.addClass("active");
         });
@@ -1256,17 +1289,17 @@ $(document).ready(function () {
           e.stopPropagation();
           $(".modal-layout__container").addClass("open");
         });
-  
+
       $(document).on("click", ".wrapper", function (e) {
         $(".modal-layout__container").removeClass("open");
       });
-  
+
       $(".modal-layout__container .modal__body")
         .unbind()
         .click(function (e) {
           e.stopPropagation();
         });
-  
+
       $("#layout__exit")
         .unbind()
         .click(function (e) {
@@ -1274,7 +1307,6 @@ $(document).ready(function () {
         });
     },
     openPlaylistInPlaylistTrack: function () {
-      
       let _this = this;
       $(".playlist__card")
         .unbind()
@@ -1284,17 +1316,19 @@ $(document).ready(function () {
           let $img = $this.find(".playlist__div-img");
           let $sourceImg = $img.attr("src");
           let $namePlaylist = $this.find(".playlist__div-name").text();
-  
+
           _this.renderPlaylistToTrack($dataPlaylist);
           _this.handleMp3Event();
-          
+
           $(".container__right-content.active").removeClass("active");
           $(".container__right-track").addClass("active");
           $("#track-cdThumb").attr("src", `${$sourceImg}`);
-          $("#container__left .ul-list .list-item.active").removeClass("active");
+          $("#container__left .ul-list .list-item.active").removeClass(
+            "active"
+          );
           $(".track__name h3").html($namePlaylist);
         });
-  
+
       $("#player__img")
         .unbind()
         .click(function (e) {
@@ -1303,7 +1337,9 @@ $(document).ready(function () {
           $(".container__right-track").addClass("active");
           $(".container__right-content.active").removeClass("active");
           $(".container__right-track").addClass("active");
-          $("#container__left .ul-list .list-item.active").removeClass("active");
+          $("#container__left .ul-list .list-item.active").removeClass(
+            "active"
+          );
         });
     },
     swapTapSideBar: function () {
@@ -1312,73 +1348,69 @@ $(document).ready(function () {
       $(".tap-sideBar")
         .unbind()
         .click(function (e) {
-          
           $(".tap-sideBar").removeClass("active");
           $(".container__right-content").removeClass("active");
           $(this).addClass("active");
-  
+
           let tapPersonal = document.querySelector(".tab-personal.active");
           let tapExplore = document.querySelector(".tab-explore.active");
           let tapRanking = document.querySelector(".tab-ranking.active");
           let tapRadio = document.querySelector(".tab-radio.active");
           let tapFollow = document.querySelector(".tab-follow.active");
-  
+
           if (tapPersonal) {
             $(".container__right-personal").addClass("active");
             _this.renderMyPlayListSongs();
             _this.handleMp3Event();
-          } else if(tapExplore) {
+          } else if (tapExplore) {
             $(".container__right-explore").addClass("active");
           }
         });
-      
     },
     playSong: function () {
       let activeSong = $(".song.active");
-  
-            $("#play-btn__play").addClass("d-none");
-            $("#play-btn__pause").removeClass("d-none");
-            $('.track__cd').addClass("is-playing");
-            $("#audio")[0].play();
-  
-            let $playingIcon = $(activeSong).find(".song__icon-playing");
-            let $pauseIcon = $(activeSong).find('.song__icon-pause');
-            $playingIcon.removeClass("d-none");
-            $pauseIcon.addClass("d-none")
-  
-            $('.track__cd').removeClass("is-rollback");
-            $('.track__cd').addClass("is-animated");
-            $(".track__controls-play").addClass("d-none");
-            $(".track__controls-pause").removeClass("d-none");
+
+      $("#play-btn__play").addClass("d-none");
+      $("#play-btn__pause").removeClass("d-none");
+      $(".track__cd").addClass("is-playing");
+      $("#audio")[0].play();
+
+      let $playingIcon = $(activeSong).find(".song__icon-playing");
+      let $pauseIcon = $(activeSong).find(".song__icon-pause");
+      $playingIcon.removeClass("d-none");
+      $pauseIcon.addClass("d-none");
+
+      $(".track__cd").removeClass("is-rollback");
+      $(".track__cd").addClass("is-animated");
+      $(".track__controls-play").addClass("d-none");
+      $(".track__controls-pause").removeClass("d-none");
       $("#track__controls-desc").html("TẠM DỪNG");
-  
     },
-    pauseSong: function() {
+    pauseSong: function () {
       let activeSong = $(".song.active");
-  
+
       $("#play-btn__play").removeClass("d-none");
       $("#play-btn__pause").addClass("d-none");
-      $('.track__cd').removeClass("is-playing");
+      $(".track__cd").removeClass("is-playing");
       $("#audio")[0].pause();
-  
+
       let $pauseIcon = $(activeSong).find(".song__icon-pause");
       $pauseIcon.removeClass("d-none");
-  
-      $('.track__cd').addClass("is-rollback");
-      $('.track__cd').removeClass("is-animated");
+
+      $(".track__cd").addClass("is-rollback");
+      $(".track__cd").removeClass("is-animated");
       $(".track__controls-play").removeClass("d-none");
       $(".track__controls-pause").addClass("d-none");
       $("#track__controls-desc").html("TIẾP TỤC PHÁT");
       setTimeout(function () {
-        $('.track__cd').removeClass("is-rollback");
-      }, 500)
+        $(".track__cd").removeClass("is-rollback");
+      }, 500);
     },
-    removePlayingIcon: function() {
+    removePlayingIcon: function () {
       $(".song__icon-pause").addClass("d-none");
       $(".song__icon-playing").addClass("d-none");
     },
   };
 
-  Mp3Player.init();  
+  Mp3Player.init();
 });
-
