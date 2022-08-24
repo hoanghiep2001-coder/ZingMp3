@@ -942,6 +942,34 @@ body {
 
 /* ------------- // end Track render playlist -------------*/
 
+/* ----------------- Explore  -----------------*/
+#explore .explore__slider {
+
+}
+
+#explore .explore__slider .explore__slider-next, 
+#explore .explore__slider .explore__slider-prev {
+  top: calc(50% - 25px);
+  color: var(--white);
+  z-index: 10;
+  background-color: hsla(0,0%,100%,.15);
+  border-radius: 50%;
+}
+
+#explore .explore__slider .explore__slider-next {
+  right: 20px;
+}
+
+#explore .explore__slider .explore__slider-prev {
+  left: 20px;
+}
+
+#explore .explore__slider .explore__slider-item img {
+  width: 100%;
+  border-radius: 20px;
+}
+/* ----------------- // end Explore  -----------------*/
+
 /* ------------ Layout modal -------------- */
 .modal-layout__container .modal__body .layout {
   background-color: var(--primary-bg);

@@ -904,10 +904,50 @@ var Home = (function () {
     ],
     ExploreMusicForDaysPlaylist: {
       Monday: [
-
+        {
+          name: "Nhạc Cho Thứ Hai",
+          image: "../Content/image/Playlist/Explore/MusicForDays/Monday.webp",
+          author: "Thứ 2 là phải nhảy theo những track Remix thịnh hành nhất hiện nay",
+        },
+        {
+          name: "K-Pop Dance",
+          image: "../Content/image/Playlist/Explore/MusicForDays/kpopdance.webp",
+          author: "Đốt cháy năng lượng bằng những vũ đạo đỉnh nhất thế giới hiện tại"
+        },
+        {
+          name: "Nhà Nhà Nghe Gì",
+          image: "../Content/image/Playlist/Explore/MusicForDays/onhanghegi.webp",
+          author: "Va vào những giai điệu nhà nhà đều nghe"
+        },
+        
+        {
+          name: "Lắc Lư Cho Hết Buồn",
+          image: "../Content/image/Playlist/Explore/MusicForDays/lacluchohetbuon.webp",
+          author: "Lắc lự quên hết mọi buồn phiền với những giai điệu hay nhất hiện nay"
+        },
       ],
       Tuesday: [
-
+        {
+          name: "Nhạc Cho Thứ Ba",
+          image: "../Content/image/Playlist/Explore/MusicForDays/Tuesday.webp",
+          author: "Thứ 3 là phải nhảy theo những track Remix thịnh hành nhất hiện nay",
+        },
+        {
+          name: "K-Pop Dance",
+          image: "../Content/image/Playlist/Explore/MusicForDays/kpopdance.webp",
+          author: "Đốt cháy năng lượng bằng những vũ đạo đỉnh nhất thế giới hiện tại"
+        },
+        {
+          name: "Nhà Nhà Nghe Gì",
+          image: "../Content/image/Playlist/Explore/MusicForDays/onhanghegi.webp",
+          author: "Va vào những giai điệu nhà nhà đều nghe"
+        },
+        
+        {
+          name: "Lắc Lư Cho Hết Buồn",
+          image: "../Content/image/Playlist/Explore/MusicForDays/lacluchohetbuon.webp",
+          author: "Lắc lự quên hết mọi buồn phiền với những giai điệu hay nhất hiện nay"
+        },
       ],
       Wednesday: [
 
@@ -934,11 +974,7 @@ var Home = (function () {
           image: "../Content/image/Playlist/Explore/MusicForDays/onhanghegi.webp",
           author: "Va vào những giai điệu nhà nhà đều nghe"
         },
-        {
-          name: "EDM Now",
-          image: "../Content/image/Playlist/Explore/MusicForDays/edmnow.webp",
-          author: "EDM Âu Mỹ mới ra lò, 1 click là lên luôn"
-        },
+        
         {
           name: "Lắc Lư Cho Hết Buồn",
           image: "../Content/image/Playlist/Explore/MusicForDays/lacluchohetbuon.webp",

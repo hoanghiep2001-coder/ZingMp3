@@ -81,6 +81,9 @@ $(document).ready(function () {
 
       // change main content when click tap side bar
       this.swapTapSideBar();
+
+      // change explore thumbnail slider when click next prev
+      this.handleExploreThumbnailSlider();
     },
     handleWithPluin: function () {
       // slick
@@ -94,15 +97,6 @@ $(document).ready(function () {
         variableWidth: false,
         slidesToScroll: 1,
         responsive: [
-          {
-            breakpoint: 2500,
-            settings: {
-              slidesToShow: 6,
-              slidesToScroll: 1,
-              infinite: true,
-              variableWidth: false,
-            },
-          },
           {
             breakpoint: 768,
             settings: {
@@ -1040,8 +1034,6 @@ $(document).ready(function () {
         $("#render-musicForDays").html(playlists.join(""));
         $(".explore__musicForDays-title").html("Cuối Tuần Lên Nhạc");
       }
-
-      console.log(dayOfWeek);
     },
 
     // function
@@ -1409,6 +1401,37 @@ $(document).ready(function () {
     removePlayingIcon: function () {
       $(".song__icon-pause").addClass("d-none");
       $(".song__icon-playing").addClass("d-none");
+    },
+    handleExploreThumbnailSlider: function() {
+      $(".explore__slider-next").unbind().click(function (e) {
+        changeSlide($(".explore__slider-item"), 1, $(".explore__slider-item[data-actived='true']"));
+      });
+
+      $(".explore__slider-prev").unbind().click(function (e) {
+        changeSlide($(".explore__slider-item"), 0,  $(".explore__slider-item[data-actived='true']"));
+      });
+
+      let changeSlide = function ($sliderItem, $number, $lastActived) {
+        
+        let sliderLength = $sliderItem.length;
+
+        if($number == 1) {
+          debugger
+          let lastSlideVisibling = $lastActived.last();
+          let dataNumberOflastSlideVisibling = lastSlideVisibling.data("number");
+          let inVisibleSlide = dataNumberOflastSlideVisibling - 2;
+          let nextItem = $sliderItem[dataNumberOflastSlideVisibling];
+          
+          $(lastSlideVisibling).attr("data-actived", "false");
+          $(nextItem).removeClass("d-none");
+          $(nextItem).attr("data-actived", "true");
+          $sliderItem[inVisibleSlide].addClass("d-none");
+          
+          console.log(nextItem)
+        } else {
+
+        }
+      };
     },
   };
 
