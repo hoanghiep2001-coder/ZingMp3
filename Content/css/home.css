@@ -964,10 +964,26 @@ body {
   left: 20px;
 }
 
+#explore .explore__slider .explore__slider-item[data-actived="true"] {
+  display: block;
+}
+
+#explore .explore__slider .explore__slider-item[data-actived="false"] {
+  display: none;
+}
+
+/* explore slide animation */
+#explore .explore__slider .explore__slider-item[data-numerical="last"] {
+  animation: nextSlideAnimation .3s ease-out;
+  transition: .3s ease-out;
+}
+
 #explore .explore__slider .explore__slider-item img {
   width: 100%;
   border-radius: 20px;
 }
+
+
 /* ----------------- // end Explore  -----------------*/
 
 /* ------------ Layout modal -------------- */

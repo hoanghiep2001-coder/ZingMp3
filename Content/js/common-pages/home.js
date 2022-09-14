@@ -3,7 +3,7 @@ $(document).ready(function () {
   let Mp3Player = {
     init: function () {
       this.renderElement();
-
+      
       this.cssHtml();
 
       this.handleEventDOM();
@@ -82,8 +82,9 @@ $(document).ready(function () {
       // change main content when click tap side bar
       this.swapTapSideBar();
 
-      // change explore thumbnail slider when click next prev
-      this.handleExploreThumbnailSlider();
+      // make slide carousel for explore slider
+      this.exploreSliderCarousel();
+
     },
     handleWithPluin: function () {
       // slick
@@ -1359,6 +1360,61 @@ $(document).ready(function () {
           }
         });
     },
+    exploreSliderCarousel: function() {
+      $(".explore__slider-next").unbind().click(function (e) {
+        Remote(1, ".explore__slider", ".explore__slider-item");
+      });
+
+      $(".explore__slider-prev").unbind().click(function (e) {
+        Remote(0, ".explore__slider", ".explore__slider-item");
+      });
+
+      function Remote(data, carouselElement, slideElement) {
+        
+        if(data == 1) {
+          let nextItem = $(carouselElement).find($(`${slideElement}[data-numerical="next"]`));
+          let dataNumberOfNextItem = $(nextItem).data("number");
+          let slideLength = $(slideElement).length;
+          let temp = dataNumberOfNextItem + 1;
+          let secondTemp = dataNumberOfNextItem - 2;
+
+          // swap caarourel to the first slide when next to the last slide
+          if(slideLength < temp) {
+            dataNumberOfNextItem = 1;
+            let loopToFirst = $(carouselElement).find($(`${slideElement}[data-number="${dataNumberOfNextItem}"]`));
+            $(loopToFirst).attr("data-numerical", "next");
+          } 
+
+          let firstItem = $(carouselElement).find($(`${slideElement}[data-numerical="first"]`));
+          let lastItem = $(carouselElement).find($(`${slideElement}[data-numerical="last"]`));
+
+          // catch the between slide when second temp is minus
+          if(secondTemp < 0) {
+            secondTemp = 5;
+          } else if(secondTemp == 0) {
+            secondTemp = 6;
+          }
+
+          let betweenItem = $(carouselElement).find($(`${slideElement}[data-number="${secondTemp}"]`));
+          let swapNextItem = $(carouselElement).find($(`${slideElement}[data-number="${temp}"]`));
+
+          $(firstItem).attr("data-numerical", "prev");
+          $(firstItem).attr("data-actived", "false");
+          
+          $(lastItem).attr("data-numerical", "none");
+          $(lastItem).attr("data-actived", "true");
+
+          $(nextItem).attr("data-numerical", "last");
+          $(nextItem).attr("data-actived", "true");
+
+          $(swapNextItem).attr("data-numerical", "next");
+          $(swapNextItem).attr("data-actived", "false");
+
+          $(betweenItem).attr("data-numerical", "first");
+          $(betweenItem).attr("data-actived", "true");
+        }
+      };
+    },
     playSong: function () {
       let activeSong = $(".song.active");
 
@@ -1401,37 +1457,6 @@ $(document).ready(function () {
     removePlayingIcon: function () {
       $(".song__icon-pause").addClass("d-none");
       $(".song__icon-playing").addClass("d-none");
-    },
-    handleExploreThumbnailSlider: function() {
-      $(".explore__slider-next").unbind().click(function (e) {
-        changeSlide($(".explore__slider-item"), 1, $(".explore__slider-item[data-actived='true']"));
-      });
-
-      $(".explore__slider-prev").unbind().click(function (e) {
-        changeSlide($(".explore__slider-item"), 0,  $(".explore__slider-item[data-actived='true']"));
-      });
-
-      let changeSlide = function ($sliderItem, $number, $lastActived) {
-        
-        let sliderLength = $sliderItem.length;
-
-        if($number == 1) {
-          debugger
-          let lastSlideVisibling = $lastActived.last();
-          let dataNumberOflastSlideVisibling = lastSlideVisibling.data("number");
-          let inVisibleSlide = dataNumberOflastSlideVisibling - 2;
-          let nextItem = $sliderItem[dataNumberOflastSlideVisibling];
-          
-          $(lastSlideVisibling).attr("data-actived", "false");
-          $(nextItem).removeClass("d-none");
-          $(nextItem).attr("data-actived", "true");
-          $sliderItem[inVisibleSlide].addClass("d-none");
-          
-          console.log(nextItem)
-        } else {
-
-        }
-      };
     },
   };
 

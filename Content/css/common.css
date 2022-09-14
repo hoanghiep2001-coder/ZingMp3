@@ -148,3 +148,10 @@ h1,h2,h3,h4,h5,h6 {
     height: 40px;
   }
  
+  @keyframes nextSlideAnimation {
+    from {
+      transform: translateX(0);
+    } to {
+      transform: translateX(30px);
+    }
+  }
